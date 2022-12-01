@@ -1,0 +1,9 @@
+extend ./_layout
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Музыкальные игры')
+        +page-title('Музыкальные игры', 'Обучайся развлекаясь: развивай музыкальный слух, изучай теорию, учись петь и играть на инструментах с помощью музыкальных игры, организованных по темам.')
+
+        .music-games
+            include ./blocks/music-game
+            include ./blocks/music-game

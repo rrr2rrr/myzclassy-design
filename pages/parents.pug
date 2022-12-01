@@ -1,0 +1,175 @@
+extend ./_layout-white-bg
+block header
+    +header('header--light')
+block content
+    .leadingpage
+        .content-dark
+            .content-wrapper
+                .leadingpage-head
+                    +bread-crumbs('bread-crumbs--white', 'Главная страница', 'Для родителей')
+                    .leadingpage-head__wrapper
+                        .leadingpage-head__description
+                            h1 Здесь учат музыке
+                            p Небольшой текст про то что это за сайт, что тут можно выбрать школу из 5000 вариантов, самостоятельно изучить более 300 материалов, попробовать свои силы на 200 конкурсах.
+                            a(href="#").btn.btn-gradient Найти музыкальную школу
+                        .leadingpage-head__img
+                            img(src="/images/parents.png")
+
+        .container.leadingpage-analysis
+            .content-wrapper
+                +page-subtitle('Разборы')
+                .articles-slider__buttons
+                    a(href="#").btn.btn-reverse Развлекательные
+                    a(href="#").btn Статьи производителей
+                    a(href="#").btn Все статьи
+            +analysis-slider(false)
+        .container
+            .content-wrapper
+                +page-subtitle('Музыкальные школы в Комсомольске-На-Амуре', null ,'ВЕСЬ КАТАЛОГ')
+            .home-page-school-slider.full-width-slider
+                +slider('js-home-page-school-slider slider-cons')
+                    +sliderItem()
+                        .home-page-school-slider__item
+                            .home-page-school-slider__item-title Детская школа искусств №1
+                            .home-page-school-slider__item-list
+                                    p Индустриальный район, ул. Индустриальная
+                                    p Учеников: 1025
+                            .home-page-school-slider__item-tags
+                                +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                            .home-page-school-slider__item-btn
+                                a.btn(href="#") Смотреть
+                    +sliderItem()
+                        .home-page-school-slider__item
+                            .home-page-school-slider__item-title Детская школа искусств №1
+                            .home-page-school-slider__item-list
+                                    p Индустриальный район, ул. Индустриальная
+                                    p Учеников: 1025
+                            .home-page-school-slider__item-tags
+                                +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                            .home-page-school-slider__item-btn
+                                a.btn(href="#") Смотреть
+                    +sliderItem()
+                        .home-page-school-slider__item
+                            .home-page-school-slider__item-title Детская школа искусств №1
+                            .home-page-school-slider__item-list
+                                    p Индустриальный район, ул. Индустриальная
+                                    p Учеников: 1025
+                            .home-page-school-slider__item-tags
+                                +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                            .home-page-school-slider__item-btn
+                                a.btn(href="#") Смотреть
+                    +sliderItem()
+                        .home-page-school-slider__item
+                            .home-page-school-slider__item-title Детская школа искусств №1
+                            .home-page-school-slider__item-list
+                                    p Индустриальный район, ул. Индустриальная
+                                    p Учеников: 1025
+                            .home-page-school-slider__item-tags
+                                +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                            .home-page-school-slider__item-btn
+                                a.btn(href="#") Смотреть
+                    +sliderItem()
+                        .home-page-school-slider__item
+                            .home-page-school-slider__item-title Детская школа искусств №1
+                            .home-page-school-slider__item-list
+                                    p Индустриальный район, ул. Индустриальная
+                                    p Учеников: 1025
+                            .home-page-school-slider__item-tags
+                                +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                            .home-page-school-slider__item-btn
+                                a.btn(href="#") Смотреть
+                    +sliderItem()
+                        .home-page-school-slider__item
+                            .home-page-school-slider__item-title Детская школа искусств №1
+                            .home-page-school-slider__item-list
+                                    p Индустриальный район, ул. Индустриальная
+                                    p Учеников: 1025
+                            .home-page-school-slider__item-tags
+                                +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                            .home-page-school-slider__item-btn
+                                a.btn(href="#") Смотреть
+
+        .pick-school
+            .pick-school__map.js-parent-map
+            .pick-school__content.js-pick-map
+                .pick-school__toggle
+                    .pick-school__title Подобрать одну из тысячи школ
+                    .pick-school__btn.btn.btn-white Подобрать
+            .pick-school__filter.js-pick-filter
+                .content-wrapper
+                    .pick-school__filter-content
+                        .pick-school__left
+                            +toggle-btn('Фильтры', '')
+                            .btn.js-toggle-parent-list списком
+
+                        .pick-school__right
+                            include mixins/search-input
+            .content-wrapper
+                .pick-school__card.js-pick-card
+                    .pick-school__card-info
+                        .pick-school__card-title Детская школа искусств имени М.А. Балакирева
+                        .pick-school__card-item Комсомольск-На-Амуре, ул. Северо-Власихинская, 144
+                        a(href='#').pick-school__card-item info@school.ru
+                        a(href='#').pick-school__card-item school.ru
+                        a(href='#').pick-school__card-item +7 (880) 399 - 0009
+                        .pick-school__card-item Учеников: 1023
+                    .pick-school__card-tags
+                        +tags(['балалайка', 'орган', 'клавесин', 'пианино', 'гитара', 'гармонь', '+5'])
+
+
+        .leadingpage-interview
+            .content-wrapper
+                +page-subtitle('Интервью с успешными музыкантами', null, 'ВСЕ ИНТЕРВЬЮ', false)
+                include ./blocks/interview
+
+        .container
+            .content-wrapper
+                +page-subtitle('Музыкальные конкурсы', null, 'ВСЕ СОБЫТИЯ')
+                include ./blocks/events/events-list
+
+        .container.leadingpage-analysis
+            .content-wrapper
+                +page-subtitle('Шпаргалки и лайфхаки', null, 'ВСЕ ШПАРГАЛКИ', false)
+                //- +tags(['Затакт: что нужно в самом начале?', 'Жизнь после ДШИ', 'Обучение в ДШИ', 'Все об инструментах', 'Для поступающих'])
+            .lifehsck-slider.lifehsck-slider--blue.lifehsck-slider--small.full-width-slider
+                +slider('js-lifehack-slider')
+                    +sliderItem()
+                        .lifehsck-slider__item
+                            .lifehsck-slider__item-title Как определить интервал на слух
+                            a(href="#") Подробнее
+                    +sliderItem()
+                        .lifehsck-slider__item
+                            .lifehsck-slider__item-title Как взять аккорд
+                            a(href="#") Подробнее
+                    +sliderItem()
+                        .lifehsck-slider__item
+                            .lifehsck-slider__item-title Как читать табулатуры
+                            a(href="#") Подробнее
+                    +sliderItem()
+                        .lifehsck-slider__item
+                            .lifehsck-slider__item-title Как читать ноты
+                            a(href="#") Подробнее
+                    +sliderItem()
+                        .lifehsck-slider__item
+                            .lifehsck-slider__item-title Как определить интервал на слух
+                            a(href="#") Подробнее
+
+        .container.leadingpage-notes-slider
+            .content-wrapper
+                +page-subtitle('Библиотека нот', null, 'ВСЕ НОТЫ', false)
+            include ./blocks/note-slider
+
+        .container.leadingpage-catalog
+            +catalog-item-slider('Каталог', 'ВСЕ ИНСТРУМЕНТЫ')
+
+        .container.leadingpage-games
+            .content-wrapper
+                +page-subtitle('Музыкальные детские игры', 'Обучайся развлекаясь: развивай музыкальный слух, изучай теорию, учись петь и играть на инструментах с помощью музыкальных игры, организованных по темам.', 'ВСЕ ИГРЫ', false)
+                .music-games
+                    include ./blocks/music-game
+                    include ./blocks/music-game
+
+
+        .leadingpage-articles
+            include ./blocks/articles-slider
+

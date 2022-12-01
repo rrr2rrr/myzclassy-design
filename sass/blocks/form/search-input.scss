@@ -1,0 +1,26 @@
+.search-input {
+    position: relative;
+    flex-grow: 1;
+    &__input {
+        width: 100%;
+        background: #FCFCFC;
+        border: 1px solid rgba(21, 33, 36, 0.1);
+        border-radius: 15px;
+        padding: 16px 76px 16px 24px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 100%;
+        color: #152124;
+    }
+    &__icon {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 0;
+        svg {
+            line-height: 0;
+        }
+    }
+}

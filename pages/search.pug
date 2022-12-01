@@ -1,0 +1,145 @@
+extend ./_layout
+block header
+    +header()
+block content
+    - var n = 0
+    .search-page
+        .content-wrapper
+            +bread-crumbs('', 'Главная страница', 'Найти школу')
+            +page-title('Музыкальные школы')
+            //.search-page__sub-title
+            //    span.programm.programm--common Общеразвивающие
+            //    |&nbsp;программы обозначены серым цветом.
+            //    span.programm.programm--professional Предпрофессиональные
+            //    |&nbsp;– оранжевым.
+
+        .search-page__container.js-result-container
+            .content-wrapper.map
+                .search-page__wrapper
+                    .search-page-filter.js-search-page-filter
+                        .search-page-filter__header
+                            .search-page-filter__header-title Фильтры
+                            span.js-toggle-show-filter
+                                include ./svg-icons/cross
+                        .search-page-filter__accordeon
+                            .accordeon.js-accordeon.accordeon--opened
+                                .accordeon-title.js-accordeon-toggle
+                                    |Программа
+                                    include ./svg-icons/arrow-toggle
+                                .accordeon-content
+                                    .search-page-filter__list
+                                        .search-page-filter__list-item
+                                            .programm-label.programm-label--common
+                                                +checkbox({label: 'Общеразвивающая'})
+                                        .search-page-filter__list-item
+                                            .programm-label.programm-label--professional
+                                                +checkbox({label: 'Предпрофессиональная'})
+                                        .search-page-filter__list-item
+                                            +checkbox({label: 'По записи (4)'})
+                        .search-page-filter__accordeon
+                            .accordeon.js-accordeon.accordeon--opened
+                                .accordeon-title.js-accordeon-toggle
+                                    |Направление
+                                    include ./svg-icons/arrow-toggle
+                                .accordeon-content
+                                    .search-page-filter__list
+                                        .search-page-filter__list-item
+                                            +checkbox({label: 'Фортепиано (15)'})
+                                        .search-page-filter__list-item
+                                            +checkbox({label: 'Гитара (10)'})
+                                        .search-page-filter__list-item
+                                            +checkbox({label: 'Скрипка (12)'})
+                                        .search-page-filter__list-item
+                                            +checkbox({label: 'Аккордеон (18)'})
+                        .search-page-filter__accordeon
+                            .accordeon.js-accordeon.accordeon--opened
+                                .accordeon-title.js-accordeon-toggle
+                                    |Возраст ребенка
+                                    include ./svg-icons/arrow-toggle
+                                .accordeon-content
+                                    .search-page-filter__list
+                                        .search-page-filter__list-item
+                                            +checkbox({label: '2-6 лет (14)'})
+                                        .search-page-filter__list-item
+                                            +checkbox({label: '7-12 лет (25)'})
+                                        .search-page-filter__list-item
+                                            +checkbox({label: '13-18 лет (32)'})
+
+                    .search-page-result
+                        .search-page-result__header
+                            +input({required: true})
+                                | Ваш адрес, чтобы найти ближайшие
+                            .search-page-mapBtn.js-toggle-result Показать на карте
+                            .search-page-filterBtn.js-toggle-show-filter
+                                | Фильтры
+                                include ./svg-icons/arrow-toggle
+                        .search-page-result__list.js-result-list
+                            .search-page-result-item
+                                a(href='#').search-page-result-item__header Детская школа искусств имени М.А. Балакирева
+                                .search-page-result-item__body
+                                    .search-page-result-item__address Комсомольск-На-Амуре, ул. Северо-Власихинская, 144
+                                    .search-page-result-item__contacts
+                                        span info@school.ru
+                                        span 8 (123) 456 76 89
+                                a(href='#').btn.btn-yellow Узнать подробно
+
+                            .search-page-categories
+                                .search-page-category
+                                    .search-page-category__subtitle Разбор
+                                    .search-page-category__title Затакт: что нужно в самом начале?
+                                    a(href="#") Подробнее
+                                .search-page-category
+                                    .search-page-category__subtitle Разбор
+                                    .search-page-category__title Затакт: что нужно в самом начале?
+                                    a(href="#") Подробнее
+                                .search-page-category
+                                    .search-page-category__subtitle Разбор
+                                    .search-page-category__title Затакт: что нужно в самом начале?
+                                    a(href="#") Подробнее
+
+                            while n < 4
+                                - n++
+                                .search-page-result-item
+                                    a(href='#').search-page-result-item__header Детская школа искусств имени М.А. Балакирева
+                                    .search-page-result-item__body
+                                        .search-page-result-item__address Комсомольск-На-Амуре, ул. Северо-Власихинская, 144
+                                        .search-page-result-item__contacts
+                                            span info@school.ru
+                                            span 8 (123) 456 76 89
+                                    a(href='#').btn.btn-yellow Узнать подробно
+
+                            include ./blocks/pagination
+
+                        .search-page-result__map.js-result-map
+                            .data-point.js-data-container
+                                .data-point__title Комсомольск-На-Амуре, ул. Северо-Власихинская, 144
+                                .data-point__metro
+                                    include ./svg-icons/metro-icon
+                                    | Молодежная, 10 минут
+                                .data-point-desctiprions
+                                    .data-point-desctiprion
+                                        .data-point-desctiprion__title 10 программ
+                                        .data-point-desctiprion__text По различным видам направлений
+                                    .data-point-desctiprion
+                                        .data-point-desctiprion__title От 5 до 18 лет
+                                        .data-point-desctiprion__text Возраст обучающихся
+                                    .data-point-desctiprion
+                                        .data-point-desctiprion__title Тип
+                                        .data-point-desctiprion__text Общеразвивающая, Предпрофессиональная
+                                    .data-point-desctiprion
+                                        .data-point-desctiprion__title Время обучения
+                                        .data-point-desctiprion__text  5 лет, 6 лет, 7 лет
+                                .data-point-contacs
+                                    .data-point-contacs__item +7 (880) 399 - 0009
+                                    .data-point-contacs__item info@school.ru
+                                    .data-point-contacs__item.data-point-contacs__socials
+                                        a(href="#").data-point-contacs__social
+                                            include ./svg-icons/facebook
+                                        a(href="#").data-point-contacs__social
+                                            include ./svg-icons/youtube
+                                        a(href="#").data-point-contacs__social
+                                            include ./svg-icons/instagram
+                                        a(href="#").data-point-contacs__social
+                                            include ./svg-icons/vk
+                                    .data-point-contacs__item school.ru
+                            .search-page-result__map-container.js-result-map-contaier

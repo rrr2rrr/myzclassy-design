@@ -1,0 +1,246 @@
+.catalog {
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $i40;
+
+    h1, .h1 {
+      margin: 0;
+      line-height: 1;
+    }
+
+    &-btns {
+      display: flex;
+      @include mq($mqMobile) {
+        display: none;
+      }
+
+      &__item {
+        margin-right: 8px;
+        line-height: 0;
+        padding: 4px;
+        cursor: pointer;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        svg {
+          transition: .3s;
+          fill: rgba(21, 33, 36, 0.2)
+        }
+
+        &--current {
+          svg {
+            fill: rgba(21, 33, 36, 1)
+          }
+        }
+
+        &:hover {
+          svg {
+            fill: rgba(21, 33, 36, 1)
+          }
+        }
+      }
+    }
+  }
+
+  &-categories {
+    margin-bottom: $i40;
+  }
+
+  &-filter {
+    margin-bottom: $i40;
+    @include mq($mqMobile) {
+      margin-bottom: 0;
+    }
+
+    .choices[data-type*='select-one'] .choices__inner {
+      min-width: 250px;
+    }
+
+    &__header {
+      display: none;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 130%;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $i24;
+      @include mq($mqMobile) {
+        display: flex;
+      }
+    }
+
+    &__btns {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $i8;
+      @include mq($mqMobile) {
+        flex-direction: column;
+        .toggle-btn {
+          margin-bottom: 16px;
+        }
+      }
+
+      & .toggle-btn {
+        background: #FCFCFC;
+        border: 1px solid rgba(21, 33, 36, 0.1);
+        border-radius: 12px;
+      }
+
+      & .choices[data-type*=select-one] .choices__inner {
+        padding: 12px 24px;
+        background: #FCFCFC;
+        border: 1px solid rgba(21, 33, 36, 0.1);
+        border-radius: 12px;
+      }
+    }
+
+    &__form {
+      padding: 24px 0;
+      background: #FCFCFC;
+      border: 1px solid rgba(21, 33, 36, 0.1);
+      border-radius: 20px;
+      display: none;
+
+      &.opened {
+        display: flex;
+      }
+
+      @include mq($mqMobile) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        padding: 48px 24px;
+        overflow: auto;
+      }
+
+      &-column {
+        flex-grow: 1;
+        padding: 28px;
+        border-right: 1px solid rgba(21, 33, 36, 0.1);
+
+        &:last-child {
+          border: none;
+        }
+
+        @include mq($mqMobile) {
+          flex-grow: 0;
+          border: none;
+          border-bottom: 1px solid rgba(21, 33, 36, 0.1);
+          margin-bottom: $i40;
+          padding: 0;
+          &:last-child {
+            padding: 0;
+            margin-bottom: 0;
+            border-bottom: 1px solid rgba(21, 33, 36, 0.1);
+          }
+        }
+      }
+
+      &-title {
+        font-size: 18px;
+        line-height: 150%;
+        font-weight: 500;
+        margin-bottom: $i16;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mq($mqMobile) {
+          margin-bottom: $i40;
+        }
+
+        &-toggle {
+          display: none;
+          @include mq($mqMobile) {
+            display: block;
+          }
+
+          svg {
+            max-width: 16px;
+          }
+        }
+
+        &.opened {
+          @include mq($mqMobile) {
+            margin-bottom: $i8;
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+
+      &-list {
+        @include mq($mqMobile) {
+          padding: 0 0 $i40;
+          display: none;
+          &.opened {
+            display: block;
+          }
+        }
+      }
+
+      &-item {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #152124;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: $i24;
+        width: 100%;
+
+        &:last-child {
+          margin-bottom: 0;;
+        }
+      }
+    }
+  }
+
+  &-list {
+    margin-bottom: $i64;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -#{$i8};
+      @include mq($mqMobile) {
+        margin: 0;
+      }
+    }
+
+    .catalog-item {
+      width: calc(100% / 3 - 16px);
+      margin: 0 $i8 $i24;
+      @include mq($mqMobile) {
+        width: 100%;
+        margin: 0 0 $i16;
+      }
+    }
+
+    .pagination {
+      margin-top: $i32;
+    }
+
+    &--row {
+      .catalog {
+        &-list {
+          &__wrapper {
+            flex-direction: column;
+          }
+        }
+
+        &-item {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

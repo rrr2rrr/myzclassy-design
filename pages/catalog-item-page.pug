@@ -1,0 +1,98 @@
+extend ./_layout
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Каталог', 'Электрогитара INSPECTOR Model S')
+    .catalog-item-page
+        .content-wrapper
+            .catalog-item-page__wrapper
+                .catalog-item-page__image
+                    .catalog-item-page__image-slider
+                        +slider('js-item-page-slider')
+                            +sliderItem()
+                                img(src="/images/guitar1.jpg", alt="", srcset="")
+                            +sliderItem()
+                                img(src="/images/guitar1.jpg", alt="", srcset="")
+                            +sliderItem()
+                                img(src="/images/guitar1.jpg", alt="", srcset="")
+                    .catalog-item-page__image-list
+                        .catalog-item-page__image-list-item.active.js-item-page-slider-to(data-index='0')
+                            img(src="/images/guitar1.jpg", alt="", srcset="")
+                        .catalog-item-page__image-list-item.js-item-page-slider-to(data-index='1')
+                            img(src="/images/guitar1.jpg", alt="", srcset="")
+                        .catalog-item-page__image-list-item.js-item-page-slider-to(data-index='2')
+                            img(src="/images/guitar1.jpg", alt="", srcset="")
+                .catalog-item-page__data
+                    .catalog-item-page__title Электрогитара<br> Inspector Model S
+                    .catalog-item-page__tags
+                        +tags(['Inspector guitars'])
+                    .catalog-item-page__price от 40 000 ₽
+                    .catalog-item-page__property-list
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Музторг
+                            .catalog-item-page__property-value
+                                .catalog-item-page__property-value-price
+                                    span.catalog-item-page__property-value-discount 41 000 ₽
+                                    span 40 000 ₽
+                                a(href="#").btn.btn-yellow-transparent В магазин
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Dynatone
+                            .catalog-item-page__property-value
+                                .catalog-item-page__property-value-price
+                                    span 40 000 ₽
+                                a(href="#").btn.btn-yellow-transparent В магазин
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Лютнер
+                            .catalog-item-page__property-value
+                                .catalog-item-page__property-value-price
+                                    span.catalog-item-page__property-value-discount 41 000 ₽
+                                    span 39 000 ₽
+                                a(href="#").btn.btn-yellow-transparent В магазин
+                    .catalog-item-page__property-list
+                        .catalog-item-page__property-list-title Характеристики
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Форма
+                            .catalog-item-page__property-value Стратокастер
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Крепление грифа
+                            .catalog-item-page__property-value Болченый
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Мензура
+                            .catalog-item-page__property-value 25.5” (648 мм)
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Количество ладов
+                            .catalog-item-page__property-value 22
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Звукосниматели
+                            .catalog-item-page__property-value 888
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Количество струн
+                            .catalog-item-page__property-value 6
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Бридж
+                            .catalog-item-page__property-value Тремоло
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Вес
+                            .catalog-item-page__property-value 3.3 кг (±)
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Производство
+                            .catalog-item-page__property-value Россия
+
+                    .catalog-item-page__property-list
+                        .catalog-item-page__property-list-title Материалы
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Гриф
+                            .catalog-item-page__property-value Клен/Палисандр
+                        .catalog-item-page__property-item
+                            .catalog-item-page__property-title Дека
+                            .catalog-item-page__property-value Ольха
+
+                    .catalog-item-page__description
+                        .catalog-item-page__description-title Описание
+                        .catalog-item-page__description-text IBANEZ PREMIUM JEM77P-BFP BLUE FLORAL PATTERN - это профессиональная шестиструнная электрогитара, именная модель гитариста Steve Vai. Электрогитара имеет яркое, насыщенное, узнаваемое звучание, классический стиль деки с вырезом и головы грифа. Электрогитара оборудована грифом из клена и ореха (5 кусков) с титановым усилением. Профиль грифа - Wizard. Гриф имеет оригинальную инкрустацию. Крепление грифа к деке выполнено на болтах. Инструмент пользуется популярностью среди гитаристов, предпочитающих насыщенное, певучее, роковое звучание электрогитары. На деку установлен подвижный тремоло-бридж с рычагом, модель - Edge-Zero II. Количество ладов грифа - 24 (Jumbo), корпус гитары украшен синим графическим рисунком. Инструмент комплектуется фирменным кейсом.
+
+        .catalog-item-page__slider.full-width-slider
+            +catalog-item-slider('Другие модели производителя')
+        .catalog-item-page__slider.full-width-slider
+            +catalog-item-slider('Похожие модели')
+        .catalog-item-page__slider
+            include ./blocks/articles-slider

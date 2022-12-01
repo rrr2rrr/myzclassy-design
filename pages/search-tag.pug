@@ -1,0 +1,21 @@
+extend ./_layout
+
+include ./mixins/article-item
+
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Поиск')
+        +page-title('#электрогитара')
+    .content-wrapper
+        .search-tag__title Статьи
+        .article-page-list
+            +articleItem('/images/article.jpg')
+            +articleItem('/images/article-1.jpg')
+            +articleItem('/images/article-2.jpg')
+            +articleItem('/images/article.jpg')
+            +articleItem('/images/article-1.jpg')
+            +articleItem('/images/article-2.jpg')
+            +articleItem('/images/article.jpg')
+            +articleItem('/images/article-1.jpg')
+            +articleItem('/images/article-2.jpg')
+        // include ./blocks/pagination

@@ -1,0 +1,12 @@
+extend ./_layout
+
+include ./mixins/article-item
+
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Музыкальные игры', 'Пара инструментов')
+        +page-title('Band match')
+    .content-wrapper.game-wrapper
+        .game
+            .game-board
+                img(src="images/game.png")

@@ -1,0 +1,110 @@
+.video-course {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px;
+  background: #FCFCFC;
+  border: 1px solid rgba(21, 33, 36, 0.1);
+  border-radius: 20px;
+  margin: 24px 0;
+
+  &:last-child {
+    margin-bottom: 32px;
+  }
+
+  @include mq($mqMobile) {
+    flex-direction: column;
+    padding: 0 0 16px 0;
+    margin: 16px 0;
+  }
+
+  &-image {
+    min-width: 400px;
+    min-height: 265px;
+    margin-right: 28px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    @include mq($mqMobile) {
+      width: 100%;
+      max-width: initial;
+      min-width: initial;
+      margin-bottom: $i16;
+      margin-right: 0;
+      border-radius: 10px 10px 0 0;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: fit-content;
+      height: 100%;
+      object-fit: cover;
+
+      @include mq($mqMobile) {
+        width: -webkit-fill-available;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-description {
+    width: 100%;
+    @include mq($mqMobile) {
+      padding: 16px 16px 0 16px;
+    }
+  }
+
+  &-tags {
+    margin-bottom: $i16;
+    @include mq($mqMobile) {
+      display: none;
+    }
+  }
+
+  &-title {
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: 500;
+    color: #152124;
+    margin-bottom: $i16;
+  }
+
+  &-option {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $i24;
+    @include mq($mqMobile) {
+      display: none;
+    }
+
+    &__item {
+      margin-right: $i24;
+
+      span {
+        font-size: 12px;
+        line-height: 110%;
+        font-weight: 500;
+        color: #152124;
+        margin-right: 8px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &-text {
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 300;
+    color: #152124;
+    margin-bottom: $i32;
+    @include mq($mqMobile) {
+      margin-bottom: $i16;
+    }
+  }
+}

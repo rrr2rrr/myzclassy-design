@@ -1,0 +1,31 @@
+mixin catalog-item-slider(title, button)
+    .catalog-item-slider.full-width-slider
+        .content-wrapper
+            if title
+                +page-subtitle(title, null, button)
+        +slider('js-catalog-item-slider')
+            +sliderItem()
+                .catalog-item-slider__slide
+                    +catalog-item({
+                        src: '/images/catalog-guitar.png'
+                    })
+            +sliderItem()
+                .catalog-item-slider__slide
+                    +catalog-item({
+                        src: '/images/catalog-guitar.png'
+                    })
+            +sliderItem()
+                .catalog-item-slider__slide
+                    +catalog-item({
+                        src: '/images/catalog-guitar.png'
+                    })
+            +sliderItem()
+                .catalog-item-slider__slide
+                    +catalog-item({
+                        src: '/images/catalog-guitar.png'
+                    })
+            +sliderItem()
+                .catalog-item-slider__slide
+                    +catalog-item({
+                        src: '/images/catalog-guitar.png'
+                    })

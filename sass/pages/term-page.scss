@@ -1,0 +1,60 @@
+.term-page {
+  p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 150%;
+    max-width: 660px;
+  }
+
+  &__title {
+    margin: 0 0 $i8 0;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 500;
+    color: #152124;
+    margin-bottom: $i48;
+    padding-bottom: $i32;
+    border-bottom: 1px solid rgba(21, 33, 36, 0.1);
+    @include mq($mqMobile) {
+      margin-bottom: $i32;
+    }
+  }
+
+  &-literature {
+    margin-top: $i40;
+    @include mq($mqMobile) {
+      margin-top: $i32;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 150%;
+      font-weight: 500;
+      color: #152124;
+      margin-bottom: $i16;
+      @include mq($mqMobile) {
+        margin-top: $i8;
+      }
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        font-size: 14px;
+        line-height: 150%;
+        font-weight: 300;
+        color: #152124;
+
+        &:before {
+          content: none
+        }
+      }
+    }
+  }
+}

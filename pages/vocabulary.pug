@@ -1,0 +1,69 @@
+extend ./_layout
+
+block content
+    -
+        var cahrs = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Э', 'Ю', 'Я']
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Музыкальная теория', 'Музыкальный словарь')
+        +page-title('Музыкальный словарь')
+
+    .vocabulary-char-row-wrapper
+        .vocabulary-char-row
+            each char in cahrs
+                a(href="#")=char
+
+    .content-wrapper
+        .vocabulary-char-block
+            .vocabulary-char-block__title А
+            .vocabulary-char-block__list
+                a(href='#').vocabulary-char-block__list-item Агогика
+                a(href='#').vocabulary-char-block__list-item Аккомпанемент
+                a(href='#').vocabulary-char-block__list-item Аккорд
+                a(href='#').vocabulary-char-block__list-item Акустика музыкальная
+                a(href='#').vocabulary-char-block__list-item Акцент
+                a(href='#').vocabulary-char-block__list-item Альт
+                a(href='#').vocabulary-char-block__list-item Агогика
+                a(href='#').vocabulary-char-block__list-item Альтерация
+                a(href='#').vocabulary-char-block__list-item Ансамбль
+                a(href='#').vocabulary-char-block__list-item Антракт
+                a(href='#').vocabulary-char-block__list-item Аппликатура
+                a(href='#').vocabulary-char-block__list-item Аранжировка
+        .vocabulary-char-block
+            .vocabulary-char-block__title Б
+            .vocabulary-char-block__list
+                a(href='#').vocabulary-char-block__list-item Бард
+                a(href='#').vocabulary-char-block__list-item Бас
+                a(href='#').vocabulary-char-block__list-item Бекар
+                a(href='#').vocabulary-char-block__list-item Бельканто
+                a(href='#').vocabulary-char-block__list-item Бемоль
+                a(href='#').vocabulary-char-block__list-item Бесконечная мелодия
+                a(href='#').vocabulary-char-block__list-item Бесконечный канон
+                a(href='#').vocabulary-char-block__list-item Библиография музыкальная
+                a(href='#').vocabulary-char-block__list-item Библиотеки музыкальные
+        .vocabulary-char-block
+            .vocabulary-char-block__title В
+            .vocabulary-char-block__list
+                a(href='#').vocabulary-char-block__list-item Агогика
+                a(href='#').vocabulary-char-block__list-item Аккомпанемент
+                a(href='#').vocabulary-char-block__list-item Аккорд
+                a(href='#').vocabulary-char-block__list-item Акустика музыкальная
+                a(href='#').vocabulary-char-block__list-item Акцент
+                a(href='#').vocabulary-char-block__list-item Альт
+                a(href='#').vocabulary-char-block__list-item Агогика
+                a(href='#').vocabulary-char-block__list-item Альтерация
+                a(href='#').vocabulary-char-block__list-item Ансамбль
+                a(href='#').vocabulary-char-block__list-item Антракт
+                a(href='#').vocabulary-char-block__list-item Аппликатура
+                a(href='#').vocabulary-char-block__list-item Аранжировка
+        .vocabulary-char-block
+            .vocabulary-char-block__title Г
+            .vocabulary-char-block__list
+                a(href='#').vocabulary-char-block__list-item Бард
+                a(href='#').vocabulary-char-block__list-item Бас
+                a(href='#').vocabulary-char-block__list-item Бекар
+                a(href='#').vocabulary-char-block__list-item Бельканто
+                a(href='#').vocabulary-char-block__list-item Бемоль
+                a(href='#').vocabulary-char-block__list-item Бесконечная мелодия
+                a(href='#').vocabulary-char-block__list-item Бесконечный канон
+                a(href='#').vocabulary-char-block__list-item Библиография музыкальная
+                a(href='#').vocabulary-char-block__list-item Библиотеки музыкальные

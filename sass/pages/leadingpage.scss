@@ -1,0 +1,153 @@
+.leadingpage {
+  &-head {
+    padding-bottom: $i64;
+    @include mq($mqMobile) {
+      padding-bottom: $i48;
+    }
+
+    h1 {
+      color: #fff;
+      margin-top: 0;
+      margin-bottom: $i32;
+    }
+
+    p {
+      color: #fff;
+      max-width: 550px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 150%;
+      margin-bottom: 0;
+    }
+
+    .btn {
+      margin-top: $i32;
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      @include mq($mqMobile) {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &__img {
+      min-width: 292px;
+      @include mq($mqMobile) {
+        margin-bottom: $i48;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &-container {
+    padding: $i64 0;
+
+    &--white {
+      background: #FFF;
+      color: #000;
+    }
+
+    &--dark {
+      background: #F9F8F6;
+    }
+
+    @include mq($mqMobile) {
+      padding: $i48 0;
+    }
+  }
+
+  & .articles-slider__buttons {
+    margin-top: 0;
+  }
+
+  &-analysis {
+    .page-subtitle {
+      margin-bottom: $i24;
+
+      &__wrapper {
+        margin-bottom: $i16;
+        @include mq($mqMobile) {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .analysis-slider {
+      margin-top: $i32;
+      @include mq($mqMobile) {
+        margin-top: $i24;
+      }
+    }
+  }
+
+  &-lifehack {
+    .page-subtitle {
+      margin-bottom: $i16;
+
+      &__wrapper {
+        margin-bottom: $i16;
+      }
+    }
+
+    .lifehsck-slider {
+      margin-top: $i32;
+      @include mq($mqMobile) {
+        margin-top: $i24;
+      }
+    }
+  }
+
+
+  &-notes {
+    @include mq($mqMobile) {
+      display: none;
+    }
+  }
+
+  &-podcasts {
+    &__title {
+      display: flex;
+      align-items: center;
+    }
+
+    .podcast-slider {
+      margin-bottom: 0;
+    }
+  }
+
+  &-instrument {
+    &__search {
+      margin-bottom: $i24;
+    }
+  }
+
+  &-interview {
+    padding: $i64 0;
+    @include mq($mqMobile) {
+      padding: $i48 0;
+    }
+
+    & h2 {
+      max-width: 100%;
+    }
+  }
+
+  &-articles {
+    padding: $i64 0;
+    background: rgb(255, 255, 255);
+    margin-bottom: -$i64;
+    @include mq($mqMobile) {
+      padding: $i48 0;
+      margin-bottom: -$i48;
+    }
+  }
+
+  &-notes-slider {
+
+  }
+}

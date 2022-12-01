@@ -1,0 +1,44 @@
+.analysis-slider {
+    &__item {
+        padding: $i24;
+        background-color: #FCFCFC;
+        border: 1px solid rgba(21, 33, 36, 0.1);
+        border-radius: 20px;
+        min-height: 184px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        & a {
+            position: relative;
+            color: #152124;
+            opacity: 0.5;
+            text-decoration: none;
+            margin-top: auto;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &--white {
+            background: #fff;
+        }
+        &-subtitle {
+            font-size: 15px;
+            line-height: 110%;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: $i8;
+        }
+        &-title {
+            font-size: 24px;
+            line-height: 120%;
+            color: rgba(0, 0, 0, 1);
+            margin-bottom: $i16;
+            flex-grow: 1;
+        }
+    }
+    .swiper-slide {
+        max-width: 278px;
+    }
+}

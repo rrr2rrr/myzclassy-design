@@ -1,0 +1,249 @@
+.first-screen {
+  margin-top: -#{$headerHeight};
+  padding-top: 170px;
+  background: linear-gradient(180deg, #152124 0%, #000000 73.44%, #152124 100%);
+  min-height: 840px;
+  position: relative;
+  @include mq($mqDesktopM) {
+    overflow: hidden;
+  }
+  @include mq($mqMobile) {
+    min-height: auto;
+    padding-bottom: 70px;
+  }
+
+  &__elements {
+    align-items: flex-end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    transition: .3s;
+    @include mq($mqMobile) {
+      width: calc(320px * 3);
+      left: 50%;
+      position: relative;
+      transform: translateX(-59%);
+    }
+  }
+
+  &__btns {
+    position: absolute;
+    top: 50%;
+    z-index: 1000;
+    left: 0px;
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px $i24;
+    @include mq($mqMobile) {
+      display: flex;
+    }
+  }
+
+  &__btn {
+    svg {
+      path {
+        stroke: #fff
+      }
+    }
+
+    &--right {
+      transform: rotate(-90deg);
+    }
+
+    &--left {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__element {
+    margin: 0px 9px;
+    cursor: pointer;
+    @include mq($mqMobile) {
+      margin: 0px 20px;
+      width: 320px;
+    }
+
+    &-container {
+      position: relative;
+    }
+
+    &-light {
+      position: absolute;
+      bottom: 0px;
+      opacity: 0.2;
+      transition: .3s;
+
+      img {
+        line-height: 0px;
+      }
+    }
+
+    &-img {
+      position: relative;
+      padding-top: 126%;
+      // width: 425px;
+      z-index: 1;
+      transition: .3s;
+      @include mq($mqMobile) {
+        opacity: 0.2;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        @include mq($mqMobile) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    &-title {
+      //transform: translateX(40px);
+      margin-top: $i24;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 110%;
+      color: #FFFFFF;
+      width: 340px;
+      padding: 15px 0;
+      border-radius: 20px;
+      border: 2px solid transparent;
+      transition: all .3s ease-in-out;
+
+      @include mq($mqMobile) {
+        transform: translateX(26px);
+      }
+
+      &.blue {
+        background-color: $blue-accent;
+      }
+
+      &.yellow {
+        background-color: $yellow-accent;
+      }
+
+      &.red {
+        background-color: $red-accent;
+      }
+    }
+
+    &--right {
+      .first-screen {
+        &__element {
+          &-light {
+            position: absolute;
+            bottom: 0px;
+            right: -24px;
+
+            @include mq($mqMobile) {
+              right: 0%;
+              transform: translateX(-63%);
+              img {
+                width: 180%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &--left {
+      .first-screen {
+        &__element {
+          &-light {
+            position: absolute;
+            bottom: 0px;
+            left: -24px;
+            @include mq($mqMobile) {
+              left: 0%;
+              transform: none;
+              img {
+                width: 180%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &--center {
+      .first-screen {
+        &__element {
+          &-light {
+            position: absolute;
+            bottom: -24px;
+            left: 60%;
+            transform: translateX(-50%);
+            @include mq($mqMobile) {
+              left: 0%;
+              transform: none;
+              img {
+                width: 120%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .first-screen {
+        &__element {
+          &-light {
+            opacity: 1;
+          }
+
+          &-title {
+            &.blue {
+              background-color: transparent;
+              border: 2px solid $blue-accent;
+            }
+
+            &.yellow {
+              background-color: transparent;
+              border: 2px solid $yellow-accent;
+            }
+
+            &.red {
+              background-color: transparent;
+              border: 2px solid $red-accent;
+            }
+          }
+
+          &-img {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &--focused {
+      @include mq($mqMobile) {
+        .first-screen {
+          &__element {
+            &-light {
+              opacity: 1;
+            }
+
+            &-title {
+              color: #FFF;
+            }
+
+            &-img {
+              @include mq($mqMobile) {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

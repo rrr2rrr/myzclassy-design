@@ -1,0 +1,23 @@
+.toggle-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 150%;
+    background: #FFFFFF;
+    border: 1px solid rgba(21, 33, 36, 0.2);
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    @include mq($mqMobile) {
+        justify-content: space-between;
+    }
+    cursor: pointer;
+    svg {
+        margin-left: 8px;
+    }
+    &--opened {
+        background: #F4D992;
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+}

@@ -1,0 +1,44 @@
+extend ./_layout-white-bg
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'События', 'Международный конкурс «Фортепианная феерия»')
+
+    .event
+        .content-wrapper
+            .event-content
+                .event-content__image
+                    .event-image
+                        img(src="/images/event-detail.jpeg")
+                .event-content__data
+                    .event-content__title
+                        +page-subtitle('Международный конкурс «Фортепианная феерия»', null ,'НА САЙТ')
+                    .event-content__tags
+                        +tags(['Конкурс', '10–15 лет', 'Бесплатно'])
+                    .event-content__description
+                        .event-content__description-row
+                            .event-content__description-title Где
+                            .event-content__description-value Москва, Можайское шоссе, дом 4, к1
+                        .event-content__description-row
+                            .event-content__description-title Когда
+                            .event-content__description-value 2 апреля 2021, 18:00
+                        .event-content__description-row
+                            .event-content__description-title Участники
+                            .event-content__description-value От 10 до 15 лет
+                        .event-content__description-row
+                            .event-content__description-title Подача заявок
+                            .event-content__description-value Бесплатно
+                    .event-content__text
+                        .event-content__text-title Описание
+                        .event-content__text-content В тринадцатый раз фестиваль «Семь нот» приглашает участников! Вас ждет интересная программа и сюрпризы, а оценивать конкурсантов будет профессиональное жюри, среди которых участники телевизионных проектов «Голос», «Голос. Дети», «Новая звезда», «А ну-ка все вместе», «Танцы на ТНТ» и другие.
+                    .event-content__text
+                        .event-content__text-title Номинации
+                        .event-content__text-content Вокал, хореография, театр моды, художественное слово, инструментальное исполнительство, декоративно-прикладное творчество и изобразительное искусство
+                    .event-content__text
+                        .event-content__text-title Официальная информация
+                        .event-content__text-content school.ru
+
+        .event__event-list
+            .content-wrapper
+                +page-subtitle('Вас так же заинтересует', null ,'ВСЕ СОБЫТИЯ')
+                include ./blocks/events/events-list
+

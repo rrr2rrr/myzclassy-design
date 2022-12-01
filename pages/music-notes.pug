@@ -1,0 +1,25 @@
+extend ./_layout
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Родителям и ученикам', 'Найти школу')
+
+        .music-notes
+            .music-notes-title
+                .music-notes-title__description
+                    h1.music-notes-title__h1 Концерт №1 для фортепиано с оркестром фа&#8209;диез минор (1&#8209;я&nbsp;редакция)
+                    .music-notes-title__author Devin Townsend
+                    .music-notes-title__tags
+                        +tags(['Фортепиано1', 'Фортепиано2', 'Фортепиано3'])
+                .music-notes-title__download
+                    // a(href="#").btn скачать pdf
+
+            .music-notes__image
+                img(src="/images/music-notes.png", alt="", srcset="")
+
+            .music-notes__pager
+                include ./blocks/pagination
+
+            .music-notes-pager-description
+                .music-notes-pager-description__item Страниц: 9
+                .music-notes-pager-description__item Источник:
+                    a(href='#' target='_blank') pianosheets.com

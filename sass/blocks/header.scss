@@ -1,0 +1,430 @@
+.header {
+  position: absolute;
+  width: 100%;
+  height: $headerHeight;
+  z-index: 2000;
+  @include mq($mqMobile) {
+    height: $headerMobileHeight;
+  }
+
+  &-logo {
+    line-height: 1;
+  }
+
+  &-content {
+    max-width: 1500px;
+    margin: 0px auto;
+    padding: $i32 $pageindent;
+    display: flex;
+    align-items: center;
+    @include mq($mqMobile) {
+      padding: $i16 $contentIndentMobile;
+    }
+  }
+
+  &-menu {
+    padding: 0px 8px;
+    flex-grow: 1;
+    @include mq($mqMobile) {
+      margin-top: -5px;
+    }
+
+    &__row {
+      line-height: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+      min-height: 15px;
+    }
+
+    &__seporate {
+      background-color: #152124;
+      height: 1px;
+      width: 100%;
+
+      &--one {
+        max-width: 47px;
+      }
+
+      &--two {
+        max-width: 250px;
+      }
+
+      &--three {
+        min-width: 150px;
+      }
+
+      &--four {
+        min-width: 150px;
+      }
+    }
+
+    a {
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 300;
+      color: #152124;
+      text-decoration: none;
+      margin: 0px 8px;
+      flex-shrink: 0;
+
+      @include mq($mqMobile) {
+        display: none;
+      }
+    }
+
+  }
+
+  &-logo {
+    flex-shrink: 0;
+
+    &__white {
+      display: none;
+    }
+
+    &__blue {
+      display: block;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: center;
+
+    .btn.btn--header-location {
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: $blue-accent;
+        border: 1px solid $blue-accent;
+      }
+
+      @include mq($mqMobile) {
+        display: none;
+      }
+    }
+
+    &__menu {
+      position: relative;
+      background: transparent;
+      padding: 0px;
+      border: none;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: #152124;
+
+        &:nth-child(1) {
+          top: 25%;
+        }
+
+        &:nth-child(2) {
+          top: 50%;
+        }
+
+        &:nth-child(3) {
+          top: 75%;
+        }
+      }
+
+      &.show {
+        span {
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(-45deg);
+          }
+
+          &:nth-child(2) {
+            display: none;
+          }
+
+          &:nth-child(3) {
+            top: 50%;
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      @include mq($mqMobile) {
+        span {
+          &:nth-child(1) {
+            top: 20%;
+          }
+
+          &:nth-child(2) {
+            top: 41%;
+          }
+
+          &:nth-child(3) {
+            top: 63%;
+          }
+        }
+      }
+    }
+  }
+
+  &--light {
+    .header {
+      &-logo {
+        svg {
+          fill: #F9F8F6;
+        }
+
+        &__white {
+          display: block;
+        }
+
+        &__blue {
+          display: none;
+        }
+      }
+
+      &-menu {
+        &__seporate {
+          background-color: #F9F8F6;
+          opacity: 0.2;
+        }
+
+        a {
+          color: #F9F8F6;
+        }
+      }
+
+      &-buttons {
+        &__menu {
+          span {
+            background-color: #F9F8F6;
+          }
+        }
+      }
+    }
+
+    .btn {
+      border: 1px solid #F9F8F6;
+      color: #F9F8F6;
+
+      svg {
+        fill: #F9F8F6;
+      }
+    }
+  }
+
+  &-collapse-menu {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: $headerHeight;
+    background: #FFFFFF;
+    z-index: -1;
+    display: none;
+    @include mq($mqMobile) {
+      padding-top: $headerMobileHeight;
+      height: 100%;
+      overflow: auto;
+    }
+
+    &.show {
+      display: block;
+    }
+
+    &__content {
+      padding-top: $i32;
+      padding-bottom: $i32;
+    }
+
+    &__footer {
+      padding: $i48 0;
+      display: none;
+      @include mq($mqMobile) {
+        display: block;
+      }
+
+      &-phone {
+        font-size: 28px;
+        line-height: 120%;
+        color: #152124;
+        margin-bottom: 4px;
+      }
+
+      &-description {
+        font-style: italic;
+        font-size: 14px;
+        line-height: 150%;
+        color: #152124;
+      }
+    }
+
+    &__search {
+      margin-bottom: $i32;
+      // display: none;
+      @include mq($mqMobile) {
+        display: block;
+      }
+
+      .search-input {
+        &__input {
+          background: #FCFCFC;
+          border: 1px solid rgba(21, 33, 36, 0.1);
+          color: #152124;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: #152124;
+          }
+        }
+
+        &__icon {
+          svg {
+            circle, path {
+              stroke: #152124;
+            }
+          }
+        }
+      }
+    }
+
+    &__btn {
+      width: 100%;
+      display: none;
+      @include mq($mqMobile) {
+        display: block;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    &__columns {
+      display: flex;
+      @include mq($mqMobile) {
+        flex-direction: column;
+      }
+    }
+
+    &__menu {
+      display: none;
+      flex-direction: column;
+      //@include mq($mqMobile) {
+      //    display: flex;
+      //}
+      &-item {
+        color: #F9F8F6;
+        font-size: 15px;
+        margin-right: 8px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin-top: $i24;
+      }
+    }
+
+    &__column {
+      flex-basis: 33.333%;
+      @include mq($mqMobile) {
+        flex-basis: 100%;
+        padding: $i32 0px;
+      }
+
+      &--mobile {
+        display: none;
+        //@include mq($mqMobile) {
+        //    display: block;
+        //}
+      }
+
+      &-header {
+        @include mq($mqMobile) {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      &-icon {
+        margin-bottom: $i8;
+        @include mq($mqMobile) {
+          margin-right: 8px;
+          margin-bottom: 0;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      &-arrow {
+        display: none;
+
+        svg {
+          path {
+            stroke: #152124;
+          }
+        }
+
+        @include mq($mqMobile) {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 120%;
+        font-weight: 500;
+        color: #152124;
+        margin-bottom: $i16;
+        @include mq($mqMobile) {
+          font-size: 15px;
+          margin-right: 8px;
+          margin-bottom: 0;
+          text-transform: uppercase;
+        }
+      }
+
+      &-list {
+        @include mq($mqMobile) {
+          margin-top: $i24;
+          display: none;
+        }
+
+        &.show {
+          display: block;
+        }
+
+        ul {
+          padding: 0px;
+        }
+
+        li {
+          &::before {
+            content: none;
+          }
+
+          padding: 0px;
+          margin-bottom: $i8;
+
+          a {
+            font-size: 14px;
+            line-height: 150%;
+            color: #152124;
+            text-decoration: none;
+            //@include mq($mqMobile) {
+            //    color: #152124;
+            //}
+          }
+        }
+      }
+    }
+  }
+}

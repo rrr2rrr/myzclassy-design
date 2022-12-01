@@ -1,0 +1,6 @@
+.podcast-slider-page {
+    margin-bottom: $i64;
+    @include mq($mqMobile) {
+        margin-bottom: $i48;
+    }
+}

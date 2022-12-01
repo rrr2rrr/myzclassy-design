@@ -1,0 +1,119 @@
+extend ./_layout
+block content
+    .notes-library
+        .content-wrapper
+            +bread-crumbs('', 'Главная страница', 'Библиотека нот')
+            +page-title('Библиотека нот')
+            .notes-library-categories
+                include ./blocks/category-notes
+            .notes-library-form.page-filter
+                .toggle-btn
+                    button(type='button')
+                        include ./svg-icons/close
+                    button(type='button').js-toggle-filter-library
+                        span Жанр (3)
+                    include ./svg-icons/arrow-toggle
+                select
+                    option(value='0') Инструменты
+                    option(value='1') Инструмент 1
+                    option(value='2') Инструмент 2
+                    option(value='3') Инструмент 3
+                    option(value='4') Инструмент 4
+                include mixins/search-input
+
+            .page-filter-content.js-library-filter
+                .page-filter-content__title
+                    |  Жанр
+                .page-filter-content__form
+                    .page-filter-content__column
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                    .page-filter-content__column
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                    .page-filter-content__column
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                    .page-filter-content__column
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+                        .page-filter-content__item
+                            +checkbox({step: 1, label: 'Жанр на выбор', disabled:'false'})
+
+            .notes-library-list
+                .notes-library-list__item
+                    .notes-library-list__item-image
+                        img(src="/images/notes-small.jpg", alt="", srcset="")
+                    .notes-library-list__item-wrapper
+                        .notes-library-list__item-tags
+                            +tags(['Фортепиано'])
+                        .notes-library-list__item-title Концерт №1 для фортепиано с оркестром фа-диез минор (1-я редакция)
+                        .notes-library-list__item-author С. Рахманинов
+                    .notes-library-list__item-btn
+                        a(href="#").btn.btn-gradient-transparent
+                            span.gradient
+                            span
+                                span Открыть
+                .notes-library-list__item
+                    .notes-library-list__item-image
+                        img(src="/images/notes-small.jpg", alt="", srcset="")
+                    .notes-library-list__item-wrapper
+                        .notes-library-list__item-tags
+                            +tags(['Фортепиано', 'Скрипка'])
+                        .notes-library-list__item-title Элегическое трио №2 ре минор «Памяти великого художника»
+                        .notes-library-list__item-author С. Рахманинов
+                    .notes-library-list__item-btn
+                        a(href="#").btn.btn-gradient-transparent
+                            span.gradient
+                            span
+                                span Открыть
+                .notes-library-list__item
+                    .notes-library-list__item-image
+                        img(src="/images/notes-small.jpg", alt="", srcset="")
+                    .notes-library-list__item-wrapper
+                        .notes-library-list__item-tags
+                            +tags(['Фортепиано'])
+                        .notes-library-list__item-title Концерт для скрипки с оркестром N2 E-dur (с партией)
+                        .notes-library-list__item-author И. С. Бах
+                    .notes-library-list__item-btn
+                        a(href="#").btn.btn-gradient-transparent
+                            span.gradient
+                            span
+                                span Открыть
+                .notes-library-list__item
+                    .notes-library-list__item-image
+                        img(src="/images/notes-small.jpg", alt="", srcset="")
+                    .notes-library-list__item-wrapper
+                        .notes-library-list__item-tags
+                            +tags(['Фортепиано'])
+                        .notes-library-list__item-title Ноктюрн
+                        .notes-library-list__item-author М. Глинка
+                    .notes-library-list__item-btn
+                        a(href="#").btn.btn-gradient-transparent
+                            span.gradient
+                            span
+                                span Открыть
+
+            include ./blocks/pagination

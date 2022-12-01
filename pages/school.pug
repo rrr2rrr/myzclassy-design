@@ -1,0 +1,173 @@
+extend ./_layout-white-bg
+
+block content
+    -
+        var n = 0;
+        var m = 0;
+        var l = 0;
+
+    .school-page
+        .content-wrapper
+            +bread-crumbs('', 'Главная страница', 'Найти школу', 'Детская школа искусств имени М.А. Балакирева')
+            +page-title('ДШИ имени М.А. Балакирева')
+
+        .container.school-page-map-container
+            .school-page-map.js-map-container
+                .content-wrapper
+                    .school-page-map__buttons
+                        .btn.btn-reverse.school-page-map__buttons-item.school-page-map__buttons-item--selected.js-toggle-adderss(data-point='[-8.427385, 115.325892]') Северо-Власихинская, 144
+                        .btn.school-page-map__buttons-item.js-toggle-adderss(data-point='[-8.496741, 115.356732]') Культурная, 18
+                        .btn.school-page-map__buttons-item.js-toggle-adderss(data-point='[-8.362489, 115.601758]') Алтайская 8
+                        .btn.school-page-map__buttons-item.js-toggle-adderss(data-point='[-8.420122, 115.681879]') Советская, 11
+                        .btn.school-page-map__buttons-item.js-toggle-adderss(data-point='[-8.632500, 115.644538]') Ленина, 3
+
+                .school-page-map__wrapper.content-wrapper
+                    .school-page-map__info
+                        .data-point.js-data-container
+                            .data-point__title Комсомольск-На-Амуре, ул. Северо-Власихинская, 144
+                            .data-point__metro
+                                include ./svg-icons/metro-icon
+                                | Молодежная, 10 минут
+                            .data-point-desctiprions
+                                .data-point-desctiprion
+                                    .data-point-desctiprion__title 10 программ
+                                    .data-point-desctiprion__text По различным видам направлений
+                                .data-point-desctiprion
+                                    .data-point-desctiprion__title От 5 до 18 лет
+                                    .data-point-desctiprion__text Возраст обучающихся
+                                .data-point-desctiprion
+                                    .data-point-desctiprion__title Тип
+                                    .data-point-desctiprion__text Общеразвивающая, Предпрофессиональная
+                                .data-point-desctiprion
+                                    .data-point-desctiprion__title Время обучения
+                                    .data-point-desctiprion__text  5 лет, 6 лет, 7 лет
+                            .data-point-contacs
+                                .data-point-contacs__item +7 (880) 399 - 0009
+                                .data-point-contacs__item info@school.ru
+                                .data-point-contacs__item.data-point-contacs__socials
+                                    a(href="#").data-point-contacs__social
+                                        include ./svg-icons/facebook
+                                    a(href="#").data-point-contacs__social
+                                        include ./svg-icons/youtube
+                                    a(href="#").data-point-contacs__social
+                                        include ./svg-icons/instagram
+                                    a(href="#").data-point-contacs__social
+                                        include ./svg-icons/vk
+                                .data-point-contacs__item school.ru
+
+
+                        .school-page-map__info-qr
+                            .school-page-map__info-image
+                                // img(src="/images/")
+                            .school-page-map__info-text
+                                p Сохраните адрес школы, отправив сообщение нашей службе поддержки в WhatsApp. Также Вы можете отправить нам отзыв о сайте и свое мнение о том, что нужно улучшить.
+                                p Наведите камеру на QR-код и перейдите по ссылке - откроется WhatsApp и диалог со службой поддержки.
+                    .school-page-map__container.js-map-holder
+        .school-page-slider.full-width-slider
+            +slider('js-school-image-slider')
+                +sliderItem()
+                    .school-page-slider__item
+                        img(src="/images/school_1.jpg")
+                +sliderItem()
+                    .school-page-slider__item
+                        img(src="/images/school_1.jpg")
+                +sliderItem()
+                    .school-page-slider__item
+                        img(src="/images/school_1.jpg")
+                +sliderItem()
+                    .school-page-slider__item
+                        img(src="/images/school_1.jpg")
+
+        .container.school-page-articles
+            include ./blocks/articles-slider
+
+        .school-page-program
+            .container.container--white
+                .content-wrapper
+                    +page-subtitle('Программы обучения', null ,'Все программы')
+                    .school-page-program__search
+                        include mixins/search-input
+                .full-width-slider
+                    +slider('js-school-page-program-slide')
+                        while n < 6
+                            +sliderItem()
+                                - n++
+                                .school-page-program__item
+                                    .school-page-program__item-image
+                                        img(src="/images/category/piano.png")
+                                    .school-page-program__item-container
+                                        .school-page-program__item-description
+                                            .school-page-program__item-title Фортепиано
+                                            .school-page-program__item-tag Общеразвивающая
+                                            .school-page-program__item-list
+                                                ul
+                                                    li Срок обучения: 5 лет
+                                                    li Возраст: с 15 лет
+                                                    li Количество часов в неделю: 15
+                                            //.school-page-program__item-btn
+                                            //    .btn.btn-gradient-transparent Записаться
+                                        .school-page-program__item-subscribe
+                                            .school-page-program__item-title Записаться
+                                            .school-page-program__item-text Общеразвивающая программа по игре на скрипке. Выберите подходящий вариант чтобы записаться.
+                                            a(href="#").school-page-program__item-tel 8 (385) 253-80-01
+                                            .school-page-program__item-link
+                                                | Перейти на
+                                                a(href="#") mos.ru
+        .container
+            .content-wrapper
+                +page-subtitle('Выпускники школы', null )
+            .school-page-graduate.full-width-slider
+                +slider('js-school-page-program-graduate')
+                    while m < 6
+                        +sliderItem()
+                            - m++
+                            .school-page-graduate__item
+                                .school-page-graduate__item-image
+                                    img(src="/images/school_2.jpg", alt="", srcset="")
+                                .school-page-graduate__item-name Рыбаков Дмитрий
+                                .school-page-graduate__item-text Закончил Троицкую ДШИ в 1998 году (преподаватель П.А. Шатров) и поступил в Барнаульское музыкальное училище, по окончании которого учился в Российской Академии музыки им. Гнесиных в классе заслуженного артиста России Горбачева А.А. Сейчас живет и работает в г. Москве.
+
+        .school-page-collective
+            .container.container--white
+                .content-wrapper
+                    +page-subtitle('Творческие коллективы в школе', null )
+                    .school-page-collective__text
+                        p Воспитанники школы неоднократно становились абсолютными победителями самых престижных фестивалей и конкурсов России и зарубежья:
+                        ul
+                            li Становились участниками Президентских программ «Культуры Крыма – детям»
+                            li Участники крупных проектов Благотворительного Фонда Илзе Лиепа при поддержке Правительства РФ
+                            li «Президентские спортивные игры» ВДЦ «Орленок»
+                            li Участники проектов МДЦ «Артек»
+                            li Участники программы Образовательного центра «СИРИУС» под патронатом Президента РФ В.В. Путина
+                //.school-page-collective__slider.full-width-slider
+                //    +slider('js-school-page-program-collective')
+                //        while l < 6
+                //            +sliderItem()
+                //                - l++
+                //                .school-page-collective__slider-item
+                //                    .school-page-collective__slider-image
+                //                        img(src="/images/school_3.png")
+                //                    .school-page-collective__slider-title Детский вокальный ансамбль «Потеха»
+
+        .school-page-contacts
+            .container
+                .content-wrapper
+                    +page-subtitle('Контакты', null )
+                    .school-page-contacts__wrapper
+                        .school-page-contacts__address
+                            |Комсомольск-На-Амуре, Северо-Власихинская, 144
+                            .school-page-contacts__address-link Посмотреть на карте
+                        .school-page-contacts__links
+                            .school-page-contacts__link +7 (880) 399 - 0009
+                            .school-page-contacts__link info@school.ru
+                            .school-page-contacts__link school.ru
+                        .school-page-contacts__socials
+                            a(href="#").school-page-contacts__socials-item
+                                include ./svg-icons/facebook
+                            a(href="#").school-page-contacts__socials-item
+                                include ./svg-icons/youtube
+                            a(href="#").school-page-contacts__socials-item
+                                include ./svg-icons/instagram
+                            a(href="#").school-page-contacts__socials-item
+                                include ./svg-icons/vk
+

@@ -1,0 +1,86 @@
+extend ./_layout
+block header
+    +header('header--light')
+block content
+    .content-events
+        .content-wrapper
+            +bread-crumbs('bread-crumbs--white', 'Главная страница', 'События')
+
+        .events-slider
+            +slider('js-events-slider')
+                +sliderItem()
+                    .events-slider-item
+                        .events-slider-item__title Международ<wbr>ный конкурс «Фортепианная феерия»
+                        .events-slider-item__description
+                            .btn.btn--white-transparent Подробнее
+                            span.events-slider-item__date 1 мая, 12:00
+    .content-wrapper
+        .events-btns
+            .page-filter
+                .toggle-btn.filter
+                    //button(type='button')
+                    //    include ./svg-icons/close
+                    button(type='button').js-toggle-filter-library
+                        p Фильтры
+                            span (2)
+                    include ./svg-icons/arrow-toggle
+                select.instruments
+                    option(value='0') Инструменты
+                    option(value='1') Инструмент 1
+                    option(value='2') Инструмент 2
+                    option(value='3') Инструмент 3
+                    option(value='4') Инструмент 4
+                select.date
+                    option(value='0') Выбрать дату
+                    option(value='1') Дата 1
+                    option(value='2') Дата 2
+                    option(value='3') Дата 3
+                    option(value='4') Дата 4
+
+            .toggle-btn.light.map Показать на карте
+
+            +search-input("Найти мероприятие")
+
+        .page-filter-content.js-library-filter
+            .page-filter-content__title
+                |  Категория события
+            .page-filter-content__form
+                .page-filter-content__column
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 1', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 2', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 3', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 4', disabled:'false'})
+                .page-filter-content__column
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 5', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 6', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 7', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 8', disabled:'false'})
+                .page-filter-content__column
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 9', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 10', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 11', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 12', disabled:'false'})
+                .page-filter-content__column
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 13', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 14', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 15', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Категория события 16', disabled:'false'})
+
+    .content-wrapper
+        include ./blocks/events/events-list

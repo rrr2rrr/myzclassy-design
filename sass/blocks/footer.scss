@@ -1,0 +1,200 @@
+.footer {
+  margin-top: $i64;
+  background: #152124;
+  padding: $i56 0 $i32;
+  @include mq($mqMobile) {
+    margin-top: $i48;
+    padding: $i48 0 $i64;
+  }
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    @include mq($mqMobile) {
+      justify-content: flex-start;
+    }
+    @include mq($mqMobileS) {
+      flex-direction: column;
+    }
+
+    &.mobile {
+      @include mq($mqMobileS) {
+        flex-direction: column;
+        margin-top: $i64;
+      }
+    }
+  }
+
+  &-menu {
+    margin-right: 56px;
+    @include mq($mqMobileS) {
+      margin-bottom: $i16;
+      margin-right: 0;
+    }
+
+    &.open {
+      .footer-menu__list {
+        display: block;
+      }
+
+      .footer-menu__title svg {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      @include mq($mqMobileS) {
+        flex-direction: column;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 150%;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 16px;
+      max-width: 200px;
+      min-height: 54px;
+
+      @include mq($mqMobileS) {
+        display: flex;
+        min-height: initial;
+        max-width: initial;
+        cursor: pointer;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      & svg {
+        display: none;
+
+        & path {
+          stroke: #FFF;
+        }
+
+        @include mq($mqMobileS) {
+          display: block;
+        }
+      }
+    }
+
+    &__list {
+      padding: 0;
+      margin: 0;
+
+      @include mq($mqMobileS) {
+        display: none;
+      }
+
+      &-item {
+        list-style: none;
+        margin-bottom: 8px;
+
+        @include mq($mqMobileS) {
+          margin-top: 16px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:before {
+          content: none;
+        }
+
+        a {
+          text-decoration: none;
+          font-size: 14px;
+          line-height: 150%;
+          font-weight: 300;
+          color: #FFF;
+        }
+      }
+    }
+  }
+
+  &-contacts {
+    &__phone, &__mail {
+      font-size: 28px;
+      line-height: 120%;
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &__phone {
+      display: none;
+      @include mq($mqMobile) {
+        display: block;
+      }
+    }
+
+    &__mail {
+      @include mq($mqMobile) {
+        // display: none;
+      }
+    }
+
+    &__description {
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 150%;
+      color: #FFFFFF;
+      @include mq($mqMobile) {
+        margin-top: 4px;
+      }
+    }
+
+    @include mq($mqMobile) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      @include mq($mqMobile) {
+        display: block;
+        margin-top: auto;
+      }
+    }
+  }
+
+  &-cp {
+    margin-top: $i40;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    @include mq($mqMobile) {
+      flex-direction: column;
+      margin-top: $i48;
+    }
+
+    @include mq($mqMobileS) {
+      align-items: flex-start;
+      margin-top: $i16;
+    }
+
+    &__item {
+      font-size: 14px;
+      line-height: 150%;
+      color: #FFFFFF;
+      margin-left: 32px;
+      text-decoration: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      @include mq($mqMobile) {
+        margin: 0 0 4px 0;
+        &:first-child {
+          margin: 0 0 4px 0;
+        }
+      }
+    }
+  }
+}

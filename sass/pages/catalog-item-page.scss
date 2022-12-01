@@ -1,0 +1,213 @@
+.catalog-item-page {
+  &__slider {
+    margin-bottom: $i64;
+
+    & .page-subtitle__wrapper h2 {
+      max-width: 100%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    margin-bottom: $i64;
+    @include mq($mqMobile) {
+      flex-direction: column;
+      margin-bottom: $i48;
+    }
+  }
+
+  &__image {
+    max-width: 334px;
+    margin-right: 85px;
+    flex-shrink: 0;
+    @include mq($mqMobile) {
+      margin: 0 auto;
+    }
+
+    &-slider {
+      overflow: hidden;
+      line-height: 0;
+
+      img {
+        max-width: 100%;
+        line-height: 0;
+      }
+
+      .slider {
+        padding: 0;
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .slider-controls {
+        display: none;
+      }
+
+      .swiper-slide {
+        background: #FFFFFF;
+        border: 1px solid rgba(21, 33, 36, 0.1);
+        border-radius: 20px;
+        display: flex;
+        overflow: hidden;
+      }
+    }
+
+    &-list {
+      display: flex;
+      margin-top: 8px;
+
+      &-item {
+        display: flex;
+        width: calc(100% / 3);
+        margin: 0 2px;
+        border-radius: 4px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 1px solid transparent;
+
+        img {
+          max-width: 100%;
+        }
+
+        &.active {
+          border-radius: 10px;
+          border: 1px solid rgba(21, 33, 36, 0.1);
+        }
+      }
+    }
+  }
+
+  &__data {
+    flex-grow: 1;
+    padding-top: $i32;
+    padding-bottom: $i64;
+    @include mq($mqMobile) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 120%;
+    font-weight: 700;
+    color: #152124;
+    margin-bottom: $i24;
+    @include mq($mqMobile) {
+      font-size: 40px;
+      margin-bottom: $i16;
+    }
+    @include mq($mqMobileS) {
+      font-size: 26px;
+    }
+  }
+
+  &__tags {
+    margin-bottom: $i48;
+    @include mq($mqMobile) {
+      margin-bottom: $i40;
+    }
+  }
+
+  &__price {
+    font-size: 28px;
+    line-height: 120%;
+    font-weight: 700;
+    color: #152124;
+    margin-bottom: $i8;
+  }
+
+  &__property-list {
+    margin-bottom: $i64;
+    @include mq($mqMobile) {
+      margin-bottom: $i16;
+    }
+
+    &-title {
+      font-size: 18px;
+      line-height: 150%;
+      font-weight: 500;
+      color: #152124;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__property-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $i8 0;
+    border-bottom: 1px solid rgba(21, 33, 36, 0.2);
+    font-size: 16px;
+    line-height: 150%;
+    color: #152124;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    & .btn.btn-yellow-transparent {
+      font-size: 14px;
+    }
+  }
+
+  &__property-title {
+    font-weight: 300;
+  }
+
+  &__property-value {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    @include mq($mqMobile) {
+      align-items: flex-start;
+    }
+
+    &-discount {
+      font-size: 14px;
+      text-decoration-line: line-through;
+      opacity: 0.4;
+      margin-right: 8px;
+      @include mq($mqMobile) {
+        order: 1;
+      }
+    }
+
+    &-price {
+      @include mq($mqMobile) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .btn {
+      margin-left: 8px;
+    }
+  }
+
+  &__description {
+    @include mq($mqMobile) {
+      margin-top: $i32;
+    }
+
+    &-title {
+      font-size: 18px;
+      line-height: 150%;
+      font-weight: 500;
+      color: #152124;
+      margin-bottom: $i16;
+    }
+
+    &-text {
+      font-size: 16px;
+      line-height: 150%;
+      font-weight: 300;
+      color: #152124;
+      @include mq($mqMobile) {
+        font-size: 16px;
+      }
+      @include mq($mqMobileS) {
+        font-size: 14px;
+      }
+    }
+  }
+}

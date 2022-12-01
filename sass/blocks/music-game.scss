@@ -1,0 +1,53 @@
+.music-game {
+  width: calc(50% - 16px);
+  max-width: 580px;
+  background: #FCFCFC;
+  border: 1px solid rgba(21, 33, 36, 0.1);
+  border-radius: 20px;
+  margin: 8px;
+  overflow: hidden;
+  @include mq($mqMobile) {
+    width: 100%;
+  }
+
+  &__image {
+    img {
+      max-width: 100%;
+      border-radius: 20px 20px 0 0;
+    }
+  }
+
+  &__description {
+    padding: 24px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: 500;
+    color: #152124;
+    margin-bottom: $i24;
+    @include mq($mqMobile) {
+      margin-bottom: $i16;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 300;
+    color: #152124;
+    margin-bottom: $i8;
+    @include mq($mqMobile) {
+      display: none;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 300;
+    color: #152124;
+    margin-bottom: $i16;
+  }
+}

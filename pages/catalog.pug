@@ -1,0 +1,107 @@
+extend ./_layout
+block content
+    .catalog
+        .content-wrapper
+            +bread-crumbs('', 'Главная страница', 'Каталог')
+            .catalog-title
+                h1.h1 Каталог музыкальных инструментов
+                .catalog-title-btns
+                    .catalog-title-btns__item.js-toggle-list.catalog-title-btns__item--current(data-type='flat')
+                        include ./svg-icons/squares
+                    .catalog-title-btns__item.js-toggle-list(data-type='row')
+                        include ./svg-icons/rows
+            .catalog-categories
+                include ./blocks/categories-row
+            .catalog-filter
+                .catalog-filter__btns
+                    +toggle-btn('Фильтры', 'js-toggle-filter')
+                    select
+                        option(value='0') По возрастанию цены
+                        option(value='1') По убыванию цены
+                        option(value='2') По популярности
+                        option(value='3') По рейтингу
+                .catalog-filter__form.js-filter
+                    .catalog-filter__header
+                        .catalog-filter__header-title Фильтры
+                        .catalog-filter__header-btn.js-toggle-filter
+                            include ./svg-icons/cross
+                    .catalog-filter__form-column
+                        .catalog-filter__form-title.js-toggle-filter-list
+                            | Инструмент
+                            .catalog-filter__form-title-toggle
+                                include ./svg-icons/arrow-toggle
+                        .catalog-filter__form-list.js-filter-list
+                            .catalog-filter__form-item
+                                +checkbox({step: 1, label: 'Гитара', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 1, label: 'Балалайка', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 1, label: 'Лира', disabled:'false'})
+                    .catalog-filter__form-column
+                        .catalog-filter__form-title.js-toggle-filter-list
+                            |Производитель
+                            .catalog-filter__form-title-toggle
+                                include ./svg-icons/arrow-toggle
+                        .catalog-filter__form-list.js-filter-list
+                            .catalog-filter__form-item
+                                +checkbox({step: 2, label: 'Inspector', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 2, label: 'Балалайкеръ', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 2, label: 'Тульская гармонь', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 2, label: 'Goronok', disabled:'false'})
+                    .catalog-filter__form-column
+                        .catalog-filter__form-title.js-toggle-filter-list
+                            |Материалы
+                            .catalog-filter__form-title-toggle
+                                include ./svg-icons/arrow-toggle
+                        .catalog-filter__form-list.js-filter-list
+                            .catalog-filter__form-item
+                                +checkbox({step: 3, label: 'Махогани', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 3, label: 'Липа', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 3, label: 'Металл', disabled:'false'})
+                    .catalog-filter__form-column
+                        .catalog-filter__form-title.js-toggle-filter-list
+                            |Особенности
+                            .catalog-filter__form-title-toggle
+                                include ./svg-icons/arrow-toggle
+                        .catalog-filter__form-list.js-filter-list
+                            .catalog-filter__form-item
+                                +checkbox({step: 4, label: 'Крепление грифа', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 4, label: 'Мензура', disabled:'false'})
+                            .catalog-filter__form-item
+                                +checkbox({step: 4, label: 'Количество струн', disabled:'false'})
+
+            .catalog-list.catalog-list--flat.js-catalog-list
+                .catalog-list__wrapper
+                    +catalog-item({
+                        mod: 'js-catalog-item',
+                        src: '/images/catalog-guitar.png'
+                    })
+                    +catalog-item({
+                        mod: 'js-catalog-item',
+                        src: '/images/catalog-guitar.png'
+                    })
+                    +catalog-item({
+                        mod: 'js-catalog-item',
+                        src: '/images/catalog-guitar.png'
+                    })
+                    +catalog-item({
+                        mod: 'js-catalog-item',
+                        src: '/images/catalog-guitar.png'
+                    })
+                    +catalog-item({
+                        mod: 'js-catalog-item',
+                        src: '/images/catalog-guitar.png'
+                    })
+                    +catalog-item({
+                        mod: 'js-catalog-item',
+                        src: '/images/catalog-guitar.png'
+                    })
+                include ./blocks/pagination
+
+    include ./blocks/articles-slider

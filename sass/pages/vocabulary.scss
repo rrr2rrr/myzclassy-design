@@ -1,0 +1,107 @@
+.vocabulary {
+  &-char-row-wrapper {
+    max-width: calc(1180px + $contentindent * 2);
+    width: calc(100% - $pageindent * 2);
+    padding: 0 $contentindent;
+    margin: 0 auto;
+    @include mq($mqMobile) {
+      padding: 0 $contentIndentMobile;
+      width: initial;
+      overflow: auto;
+      margin-bottom: $i8;
+      display: flex;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(21, 33, 36, 0.1);
+      border-radius: 20px;
+
+      &:hover {
+        background-color: rgba(21, 33, 36, 0.2);
+      }
+    }
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+  }
+
+  &-char-row {
+    background: #FCFCFC;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    border-radius: 12px;
+    font-size: 24px;
+    line-height: 120%;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $i24;
+    @include mq($mqMobile) {
+      padding: 24px;
+      margin-bottom: $i8;
+    }
+
+    a {
+      text-decoration: none;
+      color: #152124;
+      font-size: 24px;
+      font-weight: 500;
+      flex-shrink: 0;
+      @include mq($mqMobile) {
+        margin: 0 32px 0 0;
+        cursor: pointer;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &-char-block {
+    padding: 24px;
+    background: #FCFCFC;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    border-radius: 12px;
+    margin-bottom: $i24;
+    display: flex;
+
+    &__title {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1;
+      color: #152124;
+      margin-right: 122px;
+      @include mq($mqMobile) {
+        font-size: 24px;
+        margin-right: 36px;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: -$i24;
+      @include mq($mqMobile) {
+        flex-direction: column;
+      }
+
+      &-item {
+        text-decoration: none;
+        width: 33%;
+        padding-right: 20px;
+        font-size: 18px;
+        line-height: 150%;
+        font-weight: 300;
+        color: #000000;
+        margin-bottom: 16px;
+        @include mq($mqMobile) {
+          width: 100%;
+          padding-right: 0;
+        }
+
+        &:hover {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

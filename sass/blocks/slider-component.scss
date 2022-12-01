@@ -1,0 +1,74 @@
+.slider {
+    @extend .content-wrapper;
+    position: relative;
+    @include mq($mqMobile) {
+        display: flex;
+        flex-direction: column;
+    }
+    &-controls {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        display: flex;
+        justify-content: space-between;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        pointer-events: none;
+        @include mq($mqMobile) {
+            display: none;
+            position: static;
+            transform: translateY(0%);
+            justify-content: flex-start;
+            margin-top: $i16;
+            order: 2;
+        }
+        @include mq($mqMobileS) {
+            display: none;
+        }
+    }
+    &-button {
+        width: 40px;
+        height: 40px;
+        background: #FFFFFF;
+        border: 1px solid rgba(21, 33, 36, 0.2);
+        box-sizing: border-box;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        pointer-events: auto;
+        &--next {
+            transform: scale(-1, 1);
+            @include mq($mqMobile) {
+                margin-left: $i32;
+            }
+        }
+        svg {
+            opacity: .7;
+            stroke: #152124;
+        }
+    }
+    .swiper {
+        // overflow: initial;
+        @include mq($mqMobile) {
+            width: 100%;
+        }
+    }
+    .swiper-slide {
+        transition: opacity .3s;
+        opacity: 1;
+        width: 100%;
+    }
+    .swiper-slide.hidden {
+        opacity: 0.5;
+        @include mq($mqMobile) {
+            opacity: 1;
+        }
+    }
+}
+
+.full-width-slider {
+    overflow: hidden;
+}

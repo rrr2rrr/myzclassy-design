@@ -1,0 +1,140 @@
+.podcast-item {
+  display: flex;
+  align-items: flex-start;
+  padding: $i24 0;
+  border-bottom: 1px solid rgba(21, 33, 36, 0.1);
+  @include mq($mqMobileXS) {
+    padding: $i16 0;
+    align-items: flex-start;
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &-description {
+    flex-grow: 1;
+    display: flex;
+    @include mq($mqMobile) {
+      flex-direction: column;
+    }
+
+    &__wrapper {
+      flex-grow: 1;
+      max-width: 100%;
+    }
+
+    &__date {
+      font-size: 14px;
+      line-height: 150%;
+      font-weight: 300;
+      margin-bottom: $i8;
+      @include mq($mqMobile) {
+        margin-bottom: $i4;
+      }
+
+      @include mq($mqMobileXS) {
+        display: flex;
+        gap: 16px;
+      }
+
+      & .podcast-item-btn-like.mobile {
+        display: none;
+
+        @include mq($mqMobileXS) {
+          display: block;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 120%;
+      font-weight: 500;
+      margin-bottom: $i16;
+      @include mq($mqMobile) {
+        margin-bottom: $i4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 150%;
+      font-weight: 300;
+      color: #152124;
+      margin-bottom: $i24;
+      @include mq($mqMobile) {
+        display: none;
+      }
+    }
+
+    &__time {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @include mq($mqMobileXS) {
+        display: none;
+      }
+    }
+  }
+
+  &-image {
+    border-radius: 20px;
+    line-height: 0;
+    overflow: hidden;
+    margin-right: 24px;
+    width: 122px;
+    flex-shrink: 0;
+    @include mq($mqMobileXS) {
+      width: 100%;
+      min-height: 320px;
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+
+    img {
+      width: 100%;
+      line-height: 0;
+
+      @include mq($mqMobileXS) {
+        display: none;
+      }
+    }
+
+    video.mobile {
+      display: none;
+
+      @include mq($mqMobileXS) {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  &-btn {
+    @include mq($mqMobile) {
+      margin-top: $i8;
+    }
+    @include mq($mqMobileXS) {
+      display: none;
+    }
+  }
+
+  &-btn-like {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 500;
+
+    svg {
+      margin-right: 4px;
+      stroke: #152124
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.lifehsck-slider {
+    &__item {
+        padding: $i24;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 400px;
+        background: #FFFFFF;
+        border: 1px solid #152124;
+        border-radius: 20px;
+
+        &-title {
+            font-size: 18px;
+            line-height: 120%;
+            font-weight: 500;
+            color: #152124;
+            margin-bottom: $i32;
+        }
+        &-description {
+            font-size: 16px;
+            line-height: 150%;
+            color: #152124;
+            flex-grow: 1;
+        }
+    }
+    &--blue {
+        .lifehsck-slider {
+            &__item  {
+                background: #FCFCFC;
+                border: 1px solid rgba(21, 33, 36, 0.1);
+
+                & a {
+                    position: relative;
+                    color: #152124;
+                    opacity: 0.5;
+                    text-decoration: none;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                &-title {
+                    color: #152124;
+                }
+
+                &-description {
+                    color: #F9F8F6;
+                }
+            }
+        }
+        .slider-button {
+            border: 1px solid rgba(21, 33, 36, 0.2);
+            background: #FFF;
+            svg {
+                opacity: .7;
+                stroke: #152124;
+            }
+        }
+    }
+    &--small {
+        .lifehsck-slider {
+            &__item  {
+                min-height: 180px;
+                justify-content: space-between;
+            }
+        }
+    }
+    .swiper-slide {
+        width: 282px;
+    }
+}

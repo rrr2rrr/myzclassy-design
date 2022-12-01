@@ -1,0 +1,238 @@
+extend ./_layout-white-bg
+block header
+    +header('header--light')
+block content
+    .first-screen
+        .content-wrapper
+            .first-screen__elements.js-screen
+                .first-screen__element.js-screen-element.first-screen__element--left(data-index=0)
+                    .first-screen__element-container
+                        .first-screen__element-light
+                            img(src="/images/light1.png")
+                        .first-screen__element-img
+                            img(src="/images/firstscreen1.png")
+                    .first-screen__element-title.blue
+                        |Подобрать<br>инструмент
+                .first-screen__element.js-screen-element.first-screen__element--focused.first-screen__element--center(data-index=1)
+                    .first-screen__element-container
+                        .first-screen__element-light
+                            img(src="/images/light2.png")
+                        .first-screen__element-img
+                            img(src="/images/firstscreen2.png")
+                    .first-screen__element-title.yellow
+                        |Выбрать<br>школу
+                .first-screen__element.js-screen-element.first-screen__element--right(data-index=2)
+                    .first-screen__element-container
+                        .first-screen__element-light
+                            img(src="/images/light3.png")
+                        .first-screen__element-img
+                            img(src="/images/firstscreen3.png")
+                    .first-screen__element-title.red
+                        |Учиться<br>самостоятельно
+            .first-screen__btns
+                .first-screen__btn.first-screen__btn--left.js-screen__prev
+                    include ./svg-icons/arrow-toggle
+                .first-screen__btn.first-screen__btn--right.js-screen__next
+                    include ./svg-icons/arrow-toggle
+    .container.container--white
+        .content-wrapper
+            .home-page-school-description
+                .home-page-school-description__data
+                    .home-page-school-description__subtitle
+                        span Фортепиано, Скрипка, Гитара, Саксофон, Вокал
+                        a(href='#').btn.btn-gradient-transparent
+                            span.gradient
+                            span
+                                span Всего 80+ направлений
+                    .home-page-school-description__title 172 музыкальные школы
+                    .home-page-school-description__title 75 городов
+                    a.btn.btn-gradient Найти музыкальную школу
+                .home-page-school-description__img
+                    picture
+                        img(src="/images/map.png")
+        .content-wrapper
+            .home-page-school-slider__title
+                |Лучшие школы в
+                span Комсомольске-на-Амуре
+
+        .home-page-school-slider.full-width-slider
+            +slider('js-home-page-school-slider slider-cons')
+                +sliderItem()
+                    .home-page-school-slider__item
+                        .home-page-school-slider__item-title Детская школа искусств №1
+                        .home-page-school-slider__item-list
+                            p Индустриальный район, ул. Индустриальная
+                            p Учеников: 1025
+                        .home-page-school-slider__item-tags
+                            +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                        .home-page-school-slider__item-btn
+                            a.btn(href="#") Смотреть
+                +sliderItem()
+                    .home-page-school-slider__item
+                        .home-page-school-slider__item-title Детская школа искусств №1
+                        .home-page-school-slider__item-list
+                                p Индустриальный район, ул. Индустриальная
+                                p Учеников: 1025
+                        .home-page-school-slider__item-tags
+                            +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                        .home-page-school-slider__item-btn
+                            a.btn(href="#") Смотреть
+                +sliderItem()
+                    .home-page-school-slider__item
+                        .home-page-school-slider__item-title Детская школа искусств №1
+                        .home-page-school-slider__item-list
+                                p Индустриальный район, ул. Индустриальная
+                                p Учеников: 1025
+                        .home-page-school-slider__item-tags
+                            +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                        .home-page-school-slider__item-btn
+                            a.btn(href="#") Смотреть
+                +sliderItem()
+                    .home-page-school-slider__item
+                        .home-page-school-slider__item-title Детская школа искусств №1
+                        .home-page-school-slider__item-list
+                                p Индустриальный район, ул. Индустриальная
+                                p Учеников: 1025
+                        .home-page-school-slider__item-tags
+                            +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                        .home-page-school-slider__item-btn
+                            a.btn(href="#") Смотреть
+                +sliderItem()
+                    .home-page-school-slider__item
+                        .home-page-school-slider__item-title Детская школа искусств №1
+                        .home-page-school-slider__item-list
+                                p Индустриальный район, ул. Индустриальная
+                                p Учеников: 1025
+                        .home-page-school-slider__item-tags
+                            +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                        .home-page-school-slider__item-btn
+                            a.btn(href="#") Смотреть
+                +sliderItem()
+                    .home-page-school-slider__item
+                        .home-page-school-slider__item-title Детская школа искусств №1
+                        .home-page-school-slider__item-list
+                                p Индустриальный район, ул. Индустриальная
+                                p Учеников: 1025
+                        .home-page-school-slider__item-tags
+                            +tags(['Валторна', 'Фортепиано', 'Балалайка', 'Аккордеон', 'Акустическая гитара'])
+                        .home-page-school-slider__item-btn
+                            a.btn(href="#") Смотреть
+
+            .home-page-school-slider__img-mobile
+                picture
+                    img(src="/images/map.png")
+        .home-page-articles
+            include ./blocks/articles-slider
+
+    .container.container--light-blue.p0
+        .content-wrapper
+            .home-page-select
+                .home-page-select__img
+                    picture
+                        img(src="/images/parents.png")
+                .home-page-select__description
+                    .home-page-select__title
+                        h2 Как подобрать музыкальную школу?
+                    .home-page-select__subtitle
+                        span Расскажем подробно о 7 шагах
+                    a.btn.btn-white Узнать подробно
+
+    .container.container--white
+        .content-wrapper
+            .home-page-teach
+                .home-page-teach__wrapper
+                    .home-page-teach__data
+                        .home-page-teach__subtitle Самостоятельное обучение
+                        .home-page-teach__btns
+                            a.btn.btn-grey Подкасты
+                            a.btn.btn-grey Каталог нот и табов
+                            a.btn.btn-grey Лайфхаки
+                            a.btn.btn-grey Шпаргалки
+                        .home-page-teach__img-mobile
+                            img(src="/images/img.png", alt="")
+                        h2.home-page-teach__title 5 уникальных курсов <br> помогут вам стать лучше
+                    .home-page-teach__img
+                        img(src="/images/img.png", alt="")
+        .home-page-teach-slider.full-width-slider
+            +slider('js-home-page-teach-slider')
+                +sliderItem()
+                    .home-page-teach-slider__item
+                        .home-page-teach-slider__item-image
+                            picture
+                                img(src="/images/image162.png")
+                        .home-page-teach-slider__item-title-wrapper
+                                .home-page-teach-slider__item-title Для гитаристов среднего уровня
+                                a(href="#") Подробнее
+                                    img(src="images/svg/arrow.svg", alt="")
+                +sliderItem()
+                    .home-page-teach-slider__item
+                        .home-page-teach-slider__item-image
+                            picture
+                                img(src="/images/image162.png")
+                        .home-page-teach-slider__item-title-wrapper
+                            .home-page-teach-slider__item-title Для гитаристов среднего уровня
+                            a(href="#") Подробнее
+                                 img(src="images/svg/arrow.svg", alt="")
+                +sliderItem()
+                    .home-page-teach-slider__item
+                        .home-page-teach-slider__item-image
+                            picture
+                                img(src="/images/image162.png")
+                        .home-page-teach-slider__item-title-wrapper
+                            .home-page-teach-slider__item-title Для гитаристов среднего уровня
+                            a(href="#") Подробнее
+                                 img(src="images/svg/arrow.svg", alt="")
+                +sliderItem()
+                    .home-page-teach-slider__item
+                        .home-page-teach-slider__item-image
+                            picture
+                                img(src="/images/image162.png")
+                        .home-page-teach-slider__item-title-wrapper
+                            .home-page-teach-slider__item-title Для гитаристов среднего уровня
+                            a(href="#") Подробнее
+                                 img(src="images/svg/arrow.svg", alt="")
+
+        .content-wrapper
+            +page-subtitle('Шпаргалки и лайфхаки', null ,'ВСЕ ШПАРГАЛКИ', false)
+        .lifehsck-slider.lifehsck-slider--blue.lifehsck-slider--small.full-width-slider
+            +slider('js-lifehack-slider')
+                +sliderItem()
+                    .lifehsck-slider__item
+                        .lifehsck-slider__item-title Как определить интервал на слух
+                        a(href="#") Подробнее
+                +sliderItem()
+                    .lifehsck-slider__item
+                        .lifehsck-slider__item-title Как взять аккорд
+                        a(href="#") Подробнее
+                +sliderItem()
+                    .lifehsck-slider__item
+                        .lifehsck-slider__item-title Как читать табулатуры
+                        a(href="#") Подробнее
+                +sliderItem()
+                    .lifehsck-slider__item
+                        .lifehsck-slider__item-title Как читать ноты
+                        a(href="#") Подробнее
+                +sliderItem()
+                    .lifehsck-slider__item
+                        .lifehsck-slider__item-title Как определить интервал на слух
+                        a(href="#") Подробнее
+    .container.container--white
+        .content-wrapper
+            +page-subtitle('Каталог инструментов и звукового оборудования', null ,'ВЕСЬ КАТАЛОГ', false)
+            .home-page-categories-row
+                include ./blocks/categories-row
+        .content-wrapper
+            .home-page__small-title Популярное
+        .full-width-slider
+            +catalog-item-slider()
+    .content-wrapper
+        .home-page-fact
+            .home-page-fact__wrapper
+                .home-page-fact__description
+                    .home-page-fact__title Факт дня
+                    .home-page-fact__text А вы знали что дерево для производства пианино сохнет 10 лет?
+                    .btn.btn--white-transparent Следующий
+                .home-page-fact__img
+                    img(src="/images/characters_3_3-1.png")
+    .home-page-articles
+        include ./blocks/articles-slider

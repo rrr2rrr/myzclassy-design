@@ -1,0 +1,70 @@
+.interview {
+    padding: $i24;
+    background: #FCFCFC;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    border-radius: 20px;
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        @include mq($mqMobile) {
+            flex-direction: column;
+        }
+    }
+    &-image {
+        width: 142px;
+        height: 142px;
+        border-radius: 80px;
+        overflow: hidden;
+        margin-right: $i24;
+        margin-top: 10px;
+        line-height: 0;
+        @include mq($mqMobile) {
+            margin-top: 0px;
+            margin-bottom: $i24;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    &-description {
+        &__title {
+            font-size: 14px;
+            line-height: 150%;
+            font-weight: 500;
+            color: #152124;
+            margin-bottom: $i24;
+            @include mq($mqMobile) {
+                margin-bottom: $i16;
+            }
+        }
+        &__text {
+            font-size: 18px;
+            line-height: 150%;
+            font-weight: 300;
+            color: #152124;
+            max-width: 550px;
+            margin-bottom: $i24;
+            @include mq($mqMobile) {
+                margin-bottom: $i16;
+            }
+        }
+        & a {
+            position: relative;
+            color: #152124;
+            opacity: 0.5;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            & img {
+                margin-left: 10px;
+            }
+        }
+    }
+}

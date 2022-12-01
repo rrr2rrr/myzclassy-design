@@ -1,0 +1,95 @@
+.note-slider {
+  .slider-button {
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    background: #FFF;
+
+    svg {
+      opacity: .7;
+      stroke: #152124;
+    }
+  }
+
+  & .slider .swiper-slide.hidden {
+    opacity: 1;
+  }
+
+  &__item {
+    display: flex;
+    padding: 24px;
+    background: #FCFCFC;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    border-radius: 20px;
+    margin-bottom: $i40;
+    @include mq($mqMobile) {
+      flex-direction: column;
+      margin-bottom: $i32;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-image {
+      max-width: 330px;
+      margin-right: 24px;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      @include mq($mqMobile) {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: $i16;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &-wrapper {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &-title {
+      font-size: 24px;
+      line-height: 120%;
+      font-weight: 500;
+      margin-bottom: $i8;
+      max-width: 505px;
+      @include mq($mqMobile) {
+        margin-bottom: $i4;
+      }
+    }
+
+    &-author {
+      font-size: 14px;
+      line-height: 150%;
+      font-weight: 300;
+    }
+
+    &-tags {
+      .tag-list__item {
+        a {
+          //color: #F9F8F6;
+          //background: #25313F;
+        }
+      }
+
+      @include mq($mqMobile) {
+        margin-bottom: $i8;
+      }
+    }
+
+    &-btn {
+      @include mq($mqMobile) {
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

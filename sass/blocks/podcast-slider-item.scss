@@ -1,0 +1,62 @@
+.podcast-slider {
+
+    .swiper-slide {
+        max-width: 376px;
+        @include mq($mqMobile) {
+            max-width: 282px;
+        }
+    }
+    &-item {
+        max-width: 376px;
+        background: #FCFCFC;
+        border: 1px solid rgba(21, 33, 36, 0.1);
+        border-radius: 20px;
+        @include mq($mqMobile) {
+            max-width: 282px;
+        }
+        &__image {
+            border: 1px solid rgba(21, 33, 36, 0.2);
+            line-height: 0;
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+            margin: -1px;
+            img {
+                max-width: 100%;
+            }
+        }
+        &__description {
+            padding: $i24;
+            @include mq($mqMobile) {
+                padding: $i16;
+            }
+        }
+
+        &__title {
+            font-size: 24px;
+            line-height: 120%;
+            font-weight: 500;
+            color: #152124;
+            margin-bottom: $i16;
+            @include mq($mqMobile) {
+                font-size: 22px;
+            }
+        }
+        &__text {
+            font-size: 16px;
+            line-height: 150%;
+            font-weight: 300;
+            color: #152124;
+            margin-bottom: $i16;
+        }
+
+        &__date {
+            font-size: 12px;
+            line-height: 110%;
+            font-weight: 300;
+            color: #152124;
+            padding: 5px 10px;
+            background: #EBEBEB;
+            border-radius: 20px;
+        }
+    }
+}

@@ -1,0 +1,69 @@
+extend ./_layout-white-bg
+block header
+    +header('header--light')
+block content
+    .content-dark
+        .content-wrapper
+            .producer-head
+                +bread-crumbs('bread-crumbs--white', 'Главная страница', 'производители', 'Мануфактура БалалайкерЪ')
+                .producer-head-wrapper
+                    .producer-head__logo
+                        img(src="/images/producer_logo.png", alt="", srcset="")
+                    .producer-head__description
+                        h1.producer-head__title Мануфактура БалалайкерЪ
+                        .producer-head__tags
+                            +tags(['Струнно-щипковые', 'Новосибирская область'])
+                        .producer-head__data
+                            .producer-head__data-item
+                                span Комсомольск-На-Амуре,
+                                span ул. Северо-Власихинская, 144
+                            .producer-head__data-item
+                                span info@school.ru
+                                span school.ru
+                            .producer-head__data-item
+                                span +7 (880) 399 - 0009
+    .content-wrapper
+        .producer-content
+            .producer-text
+                p Мануфактура БалалайкерЪ – российское производство фольклорных музыкальных инструментов из города Ульяновска. Мануфактура выпускает балалайки, колёсные лиры и музыкальные аксессуары. На нашем сайте можно заказать через интернет, купить оптом и в розницу, с доставкой в Москве и по России различные виды балалаек и аксессуары к этим инструментам.
+                p При производстве музыкальных инструментов БалалайкерЪ использует собственные уникальные разработки и проверенные исторические технологии. БалалайкерЪ использует лучший опыт производства народных музыкальных инструментов.
+
+    .producer-content-slider
+        +slider('js-producer-content-slider')
+            +sliderItem()
+                img(src="/images/producer-image.jpeg", alt="", srcset="")
+            +sliderItem()
+                img(src="/images/producer-image.jpeg", alt="", srcset="")
+            +sliderItem()
+                img(src="/images/producer-image.jpeg", alt="", srcset="")
+
+    .content-wrapper
+        .producer-content
+            .producer-content__title Историческая технология сборки
+            .producer-text
+                p БалалайкерЪ использует русскую традиционную технологию изготовления балалайки – «вязка в ручку». Эта техника исстари применялась отечественными музыкальными мастерами. Специфика метода состоит в том, что деревянные пластины (клёпки), из которых сделан корпус (кузов), напрямую врезаются в ручку грифа. Подобное соединение отличается исключительной прочностью и высокими акустическими свойствами. Этот исторический и поистине народный способ изготовления балалаек, как более трудоёмкий, вышел из широкой практики в 1980-е годы. БалалайкерЪ кропотливо восстановил забытую технологию и все балалайки создаёт именно таким способом.
+
+        .producer-content
+            .producer-content__title BalalaikerModelSystem©
+            .producer-text
+                p Фирменная технология Мануфактуры БалалайкерЪ по конструированию народных инструментов. Сочетание современных высокотехнологичных IT-решений по прототипированию узлов и деталей вкупе со скорпулёзным изучением исторических образцов позволяют создавать яркие и технически совершенные модели музыкальных инструментов.Фирменная технология Мануфактуры БалалайкерЪ по декорированию деревянных поверхностей музыкальных инструментов. Технология основана на принципах переноса термостойких красителей на древесную поверхность. Декор, полученный таким способом, отличается устойчивостью к истиранию, к контакту с лаковыми составами и имеет эффектную принтованную фактуру.
+
+    .producer-catalog
+        .content-wrapper
+            +page-subtitle('Каталог производителя', null ,'ВСЕ ИНСТРУМЕНТЫ')
+        .full-width-slider
+            +slider('js-producer-catalog-slider')
+                +sliderItem()
+                    include ./blocks/producer-catalog-item
+                +sliderItem()
+                    include ./blocks/producer-catalog-item
+                +sliderItem()
+                    include ./blocks/producer-catalog-item
+                +sliderItem()
+                    include ./blocks/producer-catalog-item
+                +sliderItem()
+                    include ./blocks/producer-catalog-item
+                +sliderItem()
+                    include ./blocks/producer-catalog-item
+
+    include ./blocks/articles-slider

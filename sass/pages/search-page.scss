@@ -1,0 +1,463 @@
+.search-page {
+  &__sub-title {
+    font-size: 18px;
+  }
+
+  &__container {
+    margin-top: $i24;
+    padding-top: $i24;
+    position: relative;
+    margin-bottom: -#{$i64};
+    padding-bottom: $i64;
+    @include mq($mqMobile) {
+      margin-top: $i16;
+      padding-top: $i16;
+      margin-bottom: -#{$i48};
+      padding-bottom: $i48;
+    }
+
+    &--map {
+      .search-page {
+        &-result {
+          height: 100%;
+
+          &__list {
+            display: none;
+          }
+
+          &__map {
+            display: flex;
+          }
+        }
+
+        &__wrapper {
+          align-items: initial;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &-filter {
+    background: #FCFCFC;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    border-radius: 20px;
+    padding: 28px 24px;
+    min-width: 303px;
+    height: 100%;
+    @include mq($mqMobile) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      display: none;
+      z-index: 10;
+    }
+
+    &.show {
+      @include mq($mqMobile) {
+        display: block;
+      }
+    }
+
+    &__header {
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $i24;
+      @include mq($mqMobile) {
+        display: flex;
+      }
+
+      &-title {
+        font-size: 32px;
+        line-height: 130%;
+        color: #152124;
+      }
+    }
+
+    &__list {
+      &-item {
+        margin-bottom: $i24;
+
+        .checkbox-box span:after {
+          background-color: $yellow-accent;
+          border-radius: 6px;
+        }
+      }
+    }
+
+    &__accordeon {
+      margin-bottom: $i32;
+
+      &:last-child {
+        margin: 0;
+
+        .accordeon--opened {
+          border: none;
+        }
+
+        .search-page-filter__list-item {
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &-categories {
+    display: flex;
+    margin: 0 -#{$i8} $i32;
+    @include mq($mqMobile) {
+      margin: 0 -#{$i24} $i32;
+      overflow: scroll;
+      padding: 0 $i16;
+    }
+  }
+
+  &-category {
+    display: flex;
+    flex-direction: column;
+    padding: $i24;
+    background: #FCFCFC;
+    margin: 0 $i8;
+    min-width: 268px;
+    min-height: 180px;
+    border-radius: 20px;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+
+    &__subtitle {
+      font-size: 14px;
+      line-height: 110%;
+      font-weight: 300;
+      color: #000000;
+      opacity: 0.5;
+      margin-bottom: $i8;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 120%;
+      font-weight: 500;
+      color: #152124;
+      margin-bottom: $i16;
+    }
+
+    & a {
+      color: #152124;
+      opacity: 0.5;
+      text-decoration: none;
+      margin-top: auto;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-result {
+    width: 100%;
+    padding-left: $i32;
+    @include mq($mqMobile) {
+      padding-left: 0;
+    }
+
+    &__header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      width: 100%;
+      @include mq($mqMobile) {
+        flex-direction: column;
+        align-items: normal;
+        gap: 10px;
+      }
+
+      .btn {
+        white-space: nowrap;
+      }
+
+      .input {
+        flex-grow: 1;
+        margin-right: $i24;
+        @include mq($mqMobile) {
+          order: 3;
+          margin-right: 0;
+        }
+
+        & input {
+          height: 53px;
+          padding: 19px 24px;
+          background-color: #FCFCFC;
+          border: 1px solid rgba(21, 33, 36, 0.1);
+        }
+      }
+    }
+
+    &__list {
+      margin-top: $i24;
+    }
+
+    &-item {
+      position: relative;
+      padding: 24px;
+      background: #FCFCFC;
+      border-radius: 20px;
+      margin-bottom: $i32;
+      border: 1px solid rgba(21, 33, 36, 0.1);
+
+      &__header {
+        display: flex;
+        font-size: 28px;
+        line-height: 120%;
+        font-weight: 500;
+        color: #152124;
+        margin-bottom: $i24;
+        text-decoration: none;
+
+        @include mq($mqMobileS) {
+          font-size: 24px;
+        }
+      }
+
+      &__body {
+        font-size: 18px;
+        line-height: 150%;
+        color: #152124;
+        display: flex;
+        margin-bottom: $i40;
+
+        @include mq($mqMobileS) {
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+
+      &__address {
+        max-width: 255px;
+        margin-right: $i32;
+        font-size: 18px;
+
+        @include mq($mqMobileS) {
+          font-size: 14px;
+        }
+      }
+
+      &__contacts {
+        display: flex;
+        flex-direction: column;
+        padding-right: $i32;
+        margin-right: $i32;
+
+        span {
+          font-size: 18px;
+
+          @include mq($mqMobileS) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      &__students {
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__icons {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -4px;
+        display: flex;
+        @include mq($mqMobile) {
+          display: none;
+        }
+      }
+
+      &__icon {
+        position: relative;
+        z-index: 1;
+        width: 64px;
+        height: 64px;
+        border: 2px solid #E7E7E7;
+        border-radius: 64px;
+        margin: 4px;
+        overflow: hidden;
+
+        &--yellow {
+          border: 2px solid #F4D992;
+        }
+      }
+
+      &__tags {
+        display: none;
+        @include mq($mqMobile) {
+          display: block;
+        }
+      }
+
+    }
+
+    &__map {
+      min-height: 800px;
+      display: none;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      .data-point {
+        margin-bottom: 0;
+        padding: 24px;
+        background: #FCFCFC;
+        border: 1px solid rgba(21, 33, 36, 0.1);
+        border-radius: 20px;
+      }
+    }
+
+    &__map-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+
+  &-filterBtn {
+    font-size: 16px;
+    line-height: 150%;
+    color: #152124;
+    padding: 4px 16px;
+    background: #FCFCFC;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    display: none;
+    flex-grow: 1;
+    margin-right: 8px;
+    margin-bottom: $i16;
+    justify-content: space-between;
+    @include mq($mqMobile) {
+      display: flex;
+      order: 1;
+      height: 53px;
+      margin: 0;
+    }
+  }
+
+  &-mapBtn {
+    background: #FCFCFC;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    border-radius: 12px;
+    padding: 14px 34px;
+    height: 53px;
+
+    color: #152124;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    @include mq($mqMobile) {
+      order: 3;
+    }
+
+    @include mq($mqMobileS) {
+      text-align: center;
+    }
+
+    &:hover {
+      background-color: $yellow-accent;
+    }
+  }
+
+  & .btn.btn-yellow {
+    @include mq($mqMobileS) {
+      width: 100%;
+    }
+  }
+}
+
+.programm-label {
+  .checkbox-title {
+    line-height: 1;
+    color: #152124;
+    padding: 4px 4px;
+    border-radius: 8px;
+  }
+
+  .checkbox-box span:after {
+    background-color: $yellow-accent;
+    border-radius: 6px;
+  }
+
+  //&--common{
+  //    .checkbox-title {
+  //        background: #EBEBEB;
+  //    }
+  //}
+  //&--professional {
+  //    .checkbox-title {
+  //        background: #F4D992;
+  //    }
+  //}
+}
+
+.programm {
+  font-size: 18px;
+  line-height: 1;
+  color: #152124;
+  padding: 4px 4px;
+  border-radius: 8px;
+
+  &--common {
+    background: #EBEBEB;
+  }
+
+  &--professional {
+    background: #F4D992;
+  }
+}
+
+.accordeon {
+  &-title {
+    font-size: 16px;
+    line-height: 150%;
+    color: #152124;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &-content {
+    display: none;
+  }
+
+  &--opened {
+    border-bottom: 1px solid rgba(21, 33, 36, 0.2);
+
+    .accordeon {
+      &-title {
+        margin-bottom: $i16;
+
+        svg {
+          transform: scale(1, -1);
+        }
+      }
+
+      &-content {
+        display: block;
+      }
+    }
+  }
+
+}

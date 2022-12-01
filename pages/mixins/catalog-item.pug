@@ -1,0 +1,36 @@
+mixin catalog-item(data)
+    .catalog-item(class=data.mod ? 'catalog-item--flat ' + data.mod : 'catalog-item--flat')
+        .catalog-item__image
+            img(src=data.src)
+        .catalog-item__wrapper
+            .catalog-item__head
+                .catalog-item__subtitle Электрогитара
+                .catalog-item__title INSPECTOR STRATEG
+            .catalog-item__tags
+                +tags(['inspector guitars'])
+            .catalog-item__description
+                .catalog-item__description-column
+                    .catalog-item__description-title Характеристики
+                    .catalog-item__description-row
+                        span Форма
+                        span Стратокастер
+                    .catalog-item__description-row
+                        span Крепление грифа
+                        span Болченый
+                    .catalog-item__description-row
+                        span Мензура
+                        span 25.5” (648 мм)
+                .catalog-item__description-column.catalog-item__description-column--hideonflat
+                    .catalog-item__description-title Материалы
+                    .catalog-item__description-row
+                        span Гриф
+                        span Клен/Палисандр
+                    .catalog-item__description-row
+                        span Дека
+                        span Ольха
+            .catalog-item__price
+                .catalog-item__price-data
+                    span Цены от
+                    |40.000 ₽
+                //.catalog-item__price-btn
+                //    a(href="#").btn  Подробнее

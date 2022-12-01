@@ -1,0 +1,11 @@
+extend ./_layout
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Видеокурсы')
+        +page-title('Видеокурсы')
+
+        .video-course-list
+            include ./blocks/video-course
+            include ./blocks/video-course
+
+        include ./blocks/pagination

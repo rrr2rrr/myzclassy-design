@@ -1,0 +1,77 @@
+h1, .h1 {
+    font-size: 48px;
+    line-height: 120%;
+    color: #000000;
+    font-weight: 700;
+    @include mq($mqMobile) {
+        font-size: 40px;
+    }
+    @include mq($mqMobileS) {
+        font-size: 24px;
+    }
+}
+
+h2, .h2 {
+    font-size: 40px;
+    line-height: 130%;
+    color: #000000;
+    font-weight: 700;
+    @include mq($mqMobile) {
+        font-size: 32px;
+    }
+}
+
+h3, .h3 {
+    font-size: 32px;
+    line-height: 130%;
+    color: #FF4444;
+}
+
+h4, .h4 {
+    font-size: 28px;
+    line-height: 120%;
+    color: #000000;
+}
+
+h5, .h5 {
+    font-size: 24px;
+    line-height: 120%;
+    color: #000000;
+}
+
+.subtitle {
+    font-size: 22px;
+    line-height: 150%;
+    font-weight: 500;
+    color: #000000;
+    &--small{
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        color: #000000;
+    }
+}
+
+.body-text {
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    &-light {
+        font-weight: 300;
+    }
+}
+
+.table-text {
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+}
+
+.small-text {
+    font-size: 14px;
+    line-height: 150%;
+    color: #000000;
+    &--italic {
+        font-style: italic;
+    }
+}

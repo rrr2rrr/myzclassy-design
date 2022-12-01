@@ -1,0 +1,7 @@
+mixin checkbox(data)
+    label.checkbox(class=data.disabled == 'true' ? 'checkbox__disabled' : '')
+        if data.label
+            .checkbox-title=data.label
+        .checkbox-box
+            input(type="checkbox" data-step=data.step ? data.step : '' disabled=data.disabled == 'true' ? data.disabled : false)
+            span 

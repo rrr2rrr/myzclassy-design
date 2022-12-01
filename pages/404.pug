@@ -1,0 +1,13 @@
+extend ./_layout
+block header
+    +header()
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'События')
+
+        .not-found
+            .not-found__image
+                img(src="/images/404.png")
+            .not-found__title Страница не найдена
+            .not-found__btn
+                a(href="#").btn.btn-black-transparent Перейти на главную

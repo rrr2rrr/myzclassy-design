@@ -1,0 +1,17 @@
+.game {
+  &-board {
+    width: 100%;
+    max-height: 650px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@include mq($mqMobileS) {
+  .game-wrapper {
+    padding: 0;
+    margin-bottom: -48px;
+  }
+}

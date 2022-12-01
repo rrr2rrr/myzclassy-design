@@ -1,0 +1,45 @@
+extend ./_layout
+
+include ./mixins/article-item
+
+block content
+    .article-page
+        .content-wrapper
+            +bread-crumbs('', 'Главная страница', 'Истории и статьи')
+            +page-title('В мире редких музыкальных инструментов', 'Данный предмет важен для развития музыкального слуха и для того, чтобы слушать музыку более детально. Изучение сольфеджио помогает не просто развить слух, но и дает возможность научиться раскладывать каждую композицию «по полочкам»')
+
+        .article-page-slider
+            +slider('js-articles-slider')
+                +sliderItem()
+                    .article-page-slider__item
+                        img(src="/images/articles_slider.jpeg", alt="", srcset="")
+                        .article-page-slider__item-description
+                            .article-page-slider__item-tag разбор
+                            .article-page-slider__item-title История электрогитары
+                            a(href="#").btn.btn--white-transparent Читать
+                +sliderItem()
+                    .article-page-slider__item
+                        img(src="/images/articles_slider.jpeg", alt="", srcset="")
+                        .article-page-slider__item-description
+                            .article-page-slider__item-tag разбор
+                            .article-page-slider__item-title История электрогитары
+                            a(href="#").btn.btn--white-transparent Читать
+
+        .content-wrapper
+            //.article-page-categories
+            //    include ./blocks/categories-row
+            .article-page-search
+                include mixins/search-input
+            .article-page-tags
+                +tags(['Путь к успеху', 'Шпаргалки', 'Музыка', 'Музыкальные инструменты', 'Наследие', 'Советы', 'Интервью', 'Мероприятия'])
+            .article-page-list
+                +articleItem('/images/article.jpg')
+                +articleItem('/images/article-1.jpg')
+                +articleItem('/images/article-2.jpg')
+                +articleItem('/images/article.jpg')
+                +articleItem('/images/article-1.jpg')
+                +articleItem('/images/article-2.jpg')
+                +articleItem('/images/article.jpg')
+                +articleItem('/images/article-1.jpg')
+                +articleItem('/images/article-2.jpg')
+            include ./blocks/pagination

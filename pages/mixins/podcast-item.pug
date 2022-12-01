@@ -1,0 +1,23 @@
+mixin podcast-item(description, hideLike)
+    .podcast-item
+        .podcast-item-image
+            img(src="/images/podcast.jpg")
+            video(controls=true, poster="/images/podcast-main.png").mobile
+                source(src="/images/guitar2.png")
+        .podcast-item-description
+            .podcast-item-description__wrapper
+                .podcast-item-description__date 12 октября 2021
+                    .podcast-item-btn-like.mobile
+                        include ../svg-icons/like
+                        | 235
+                .podcast-item-description__title Антон Беляев. Полистилистика, LAB и электронные инструменты
+                - if (description)
+                    .podcast-item-description__text=description
+                .podcast-item-description__time
+                    include ../svg-icons/play-icon
+                    span 24 минуты
+            - if (!hideLike)
+                .podcast-item-btn
+                    .podcast-item-btn-like
+                        include ../svg-icons/like
+                        |235

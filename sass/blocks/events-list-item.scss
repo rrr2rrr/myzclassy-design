@@ -1,0 +1,120 @@
+.events-list-item {
+    display: flex;
+    padding: $i32 0;
+    border-bottom: 1px solid rgba(21, 33, 36, 0.1);
+    &:last-child {
+        border-bottom: none;
+    }
+    @include mq($mqMobile) {
+        padding: $i24 0;
+        flex-direction: column;
+    }
+    &__date {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        margin-right: 24px;
+        @include mq($mqMobile) {
+            order: 2;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        &-number {
+            font-size: 64px;
+            line-height: 100%;
+            font-weight: 500;
+            color: #2F2D3F;
+            @include mq($mqMobile) {
+                font-size: 18px;
+                line-height: 100%;
+                color: #2F2D3F;
+                margin-right: 5px;
+            }
+        }
+        &-month, &-time {
+            font-size: 18px;
+            line-height: 150%;
+            font-weight: 500;
+            color: #2F2D3F;
+            @include mq($mqMobile) {
+                font-size: 18px;
+                line-height: 100%;
+                color: #2F2D3F;
+                margin-right: 5px;
+            }
+        }
+        &-month {
+            @include mq($mqMobile) {
+                &::after {
+                    content: ',';
+                }
+            }
+        }
+
+        &-notice {
+            font-size: 12px;
+            line-height: 1.2;
+            font-weight: 300;
+            color: #2F2D3F;
+            max-width: 90px;
+            margin-top: auto;
+            @include mq($mqMobile) {
+                max-width: initial;
+                width: 100%;
+                margin-top: $i8;
+                margin-bottom: $i16;
+            }
+        }
+    }
+
+    &__image {
+        overflow: hidden;
+        border-radius: 20px;
+        max-width: 310px;
+        margin-right: 24px;
+        flex-shrink: 0;
+        @include mq($mqMobile) {
+            order: 1;
+            margin-right: 0px;
+            max-width: initial;
+            margin-bottom: $i16;
+        }
+        img {
+            width: 100%;
+        }
+    }
+
+    &__description {
+        @include mq($mqMobile) {
+            order: 3;
+            display: flex;
+            flex-direction: column;
+        }
+        &-tags {
+            margin-bottom: $i8;
+            @include mq($mqMobile) {
+                order: 2;
+            }
+        }
+        &-title {
+            font-size: 24px;
+            line-height: 120%;
+            font-weight: 500;
+            color: #2F2D3F;
+            margin-bottom: $i16;
+            @include mq($mqMobile) {
+                order: 1;
+            }
+        }
+        &-text {
+            font-size: 14px;
+            line-height: 150%;
+            font-weight: 300;
+            color: #2F2D3F;
+            @include mq($mqMobile) {
+                order: 3;
+                font-size: 16px;
+            }
+        }
+    }
+}

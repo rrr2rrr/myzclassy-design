@@ -1,0 +1,114 @@
+.content-events {
+    margin-top: $headerHeight * -1;
+    padding-top: $headerHeight;
+    background-image: url('/images/event.jpeg');
+    background-size: cover;
+    min-height: 539px;
+    margin-bottom: $i64;
+    @include mq($mqMobile) {
+        margin-top: $headerMobileHeight * -1;
+        padding-top: $headerMobileHeight;
+        margin-bottom: $i48;
+    }
+}
+.events {
+    &-slider {
+        padding: $i32 0px;
+        @include mq($mqMobile) {
+            padding: 0px 0px $i64 0px;
+        }
+        &-item {
+            &__title {
+                font-size: 40px;
+                line-height: 120%;
+                font-weight: 700;
+                color: #FFFFFF;
+                max-width: 710px;
+                margin-bottom: $i24;
+                word-break: break-word;
+                @include mq($mqMobile) {
+                    font-size: 40px;
+                    line-height: 120%;
+                    margin-bottom: $i16;
+                }
+                @include mq($mqMobileS) {
+                    font-size: 26px;
+                }
+            }
+            &__description {
+                display: flex;
+                align-items: center;
+            }
+            &__date {
+                margin-left: 16px;
+                font-size: 18px;
+                line-height: 100%;
+                color: #FFFFFF;
+            }
+        }
+
+        .slider-button {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            svg {
+                opacity: .7;
+                stroke: #F9F8F6;
+            }
+        }
+
+        .slider-controls {
+            @include mq($mqMobile) {
+                order: 0;
+                margin-top: 0px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    &-btns {
+        & .toggle-btn {
+            background-color: $yellow-accent;
+            border-radius: 12px;
+
+            & p, & span{
+                font-weight: 500;
+            }
+        }
+
+        & .choices[data-type*=select-one] .choices__inner {
+            background: #FCFCFC;
+            border: 1px solid rgba(21, 33, 36, 0.1);
+            border-radius: 12px;
+        }
+
+        & .choices[data-type*=select-one] .choices__item--selectable {
+            font-weight: 500;
+        }
+
+        & .toggle-btn.light {
+            background: #FCFCFC;
+            border: 1px solid rgba(21, 33, 36, 0.1);
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        & .search-input {
+            display: none;
+        }
+
+        @include mq($mqMobileS) {
+            & .toggle-btn.map, & .choices[data-type*=select-one] {
+                display: none;
+            }
+
+            & .toggle-btn.filter {
+                margin-bottom: $i16;
+                height: 50px;
+            }
+
+            & .search-input {
+                display: block;
+            }
+        }
+    }
+}

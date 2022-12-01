@@ -1,0 +1,155 @@
+.event {
+  &__event-list {
+    padding-top: $i64;
+    padding-bottom: $i64;
+    margin-bottom: -$i64;
+    @include mq($mqMobile) {
+      padding-bottom: $i48;
+      margin-bottom: -$i48;
+    }
+  }
+
+  &-image {
+    border-radius: 6px;
+    overflow: hidden;
+    line-height: 0;
+    margin-bottom: $i24;
+    @include mq($mqMobile) {
+      margin-bottom: $i16;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-content {
+    display: flex;
+    margin-bottom: $i32;
+    @include mq($mqMobile) {
+      flex-direction: column;
+    }
+
+    &__image {
+      max-width: 430px;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      border-radius: 20px;
+      @include mq($mqMobile) {
+        margin-bottom: $i24;
+      }
+
+      & img {
+        border-radius: 20px;
+      }
+    }
+
+    &__data {
+      padding-left: 42px;
+      @include mq($mqMobile) {
+        padding-left: 0;
+      }
+    }
+
+    &__title {
+      & .page-subtitle__wrapper {
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      & .page-subtitle__wrapper h2, .h2 {
+        font-size: 40px;
+        margin: 0 0 $i32 0;
+        @include mq($mqMobile) {
+          margin: 0 0 $i24 0;
+          font-size: 26px;
+        }
+      }
+
+      & .btn.btn-reverse {
+        min-width: 110px;
+        margin-top: 10px;
+      }
+    }
+
+    &__tags {
+      margin-bottom: $i24;
+      @include mq($mqMobile) {
+        margin-bottom: $i16;
+      }
+    }
+
+    &__description {
+      padding: $i24 $i24 $i24 0;
+      margin-bottom: $i32;
+      border-top: 1px solid rgba(21, 33, 36, 0.1);
+      border-bottom: 1px solid rgba(21, 33, 36, 0.1);
+      @include mq($mqMobile) {
+        padding: $i16;
+        margin-bottom: $i24;
+      }
+
+      @include mq($mqMobile) {
+        border: none;
+        padding: 0;
+      }
+
+      &-row {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-bottom: $i24;
+        @include mq($mqMobile) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 110%;
+        font-weight: 500;
+        color: #152124;
+        margin-bottom: $i8;
+        @include mq($mqMobile) {
+          min-width: initial;
+          margin-bottom: $i8;
+        }
+      }
+
+      &-value {
+        font-size: 14px;
+        line-height: 110%;
+        font-weight: 300;
+        color: #152124;
+      }
+    }
+
+    &__text {
+      margin-bottom: $i32;
+      @include mq($mqMobile) {
+        margin-bottom: $i24;
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 120%;
+        font-weight: 500;
+        color: #152124;
+        margin-bottom: $i8;
+      }
+
+      &-content {
+        font-size: 14px;
+        line-height: 150%;
+        font-weight: 300;
+        color: #152124;
+      }
+    }
+  }
+}

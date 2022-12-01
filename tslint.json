@@ -1,0 +1,8 @@
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint-config-airbnb"],
+    "rules" : {
+        "ter-indent": [true, 4],
+        "indent": [true, "spaces", 4]
+    }
+}

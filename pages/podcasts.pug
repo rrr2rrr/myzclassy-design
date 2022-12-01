@@ -1,0 +1,19 @@
+extend ./_layout
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Подкасты')
+        +page-title('Подкасты', 'О музыке здесь можно не только читать, но и слушать. Разные ведущие, темы и гости. А самих подкастов теперь будет еще больше.')
+
+    .content-overflow
+        .podcast-slider-page
+            include ./blocks/podcast-slider
+    .content-wrapper
+        +page-subtitle('Последние выпуски')
+        .podcast-list 
+            +podcast-item()
+            +podcast-item()
+            +podcast-item()
+            +podcast-item()
+            +podcast-item()
+            +podcast-item()
+            +podcast-item()

@@ -1,0 +1,101 @@
+.article-page {
+    .page-title {
+        max-width: 1034px;
+        &__description {
+            max-width: 840px;
+        }
+    }
+
+    &-slider {
+        margin-bottom: $i48;
+        .slider .swiper {
+            overflow: hidden;
+        }
+        &__item {
+            position: relative;
+            @include mq($mqMobile) {
+                min-height: 489px;
+                display: flex;
+            }
+            img {
+                border-radius: 8px;
+                width: 100%;
+                @include mq($mqMobile) {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+            &-description {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 43px;
+                max-width: 100%;
+                @include mq($mqMobile) {
+                    left: 24px;
+                    right: 24px;
+                    bottom: 24px;
+                    top: auto;
+                    transform: none;
+                }
+            }
+            &-tag {
+                font-size: 15px;
+                line-height: 110%;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                margin-bottom: $i16;
+            }
+            &-title {
+                font-size: 28px;
+                line-height: 120%;
+                color: #FFFFFF;
+                margin-bottom: 24px;
+            }
+        }
+        .slider-controls {
+            @include mq($mqMobile) {
+                display: none;
+            }
+        }
+    }
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px -12px;
+        width: calc(100% + 24px);
+        margin-bottom: 20px;
+        .article-item {
+            width: calc(100% / 3 - 24px);
+            margin: 12px;
+            min-height: 440px;
+            @include mq($mqMobile) {
+                width: calc(50% - 24px);
+                min-height: 400px;
+            }
+            @include mq($mqMobileS) {
+                width: 100%;
+                min-height: 400px;
+            }
+        }
+    }
+    &-tags {
+        @include mq($mqMobile) {
+            display: none;
+        }
+    }
+    &-search {
+        margin-bottom: $i16;
+    }
+
+    &-categories {
+        margin-bottom: 12px;
+        @include mq($mqMobile) {
+            display: none;
+        }
+    }
+}

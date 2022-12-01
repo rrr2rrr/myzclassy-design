@@ -1,0 +1,11 @@
+mixin tags(items, mod)
+    if mod 
+        ul.tag-list(class='tag-list--'+mod)
+            each item in items
+                li.tag-list__item
+                    a(href='#')=item
+    else 
+        ul.tag-list
+            each item in items
+                li.tag-list__item
+                    a(href='#')=item

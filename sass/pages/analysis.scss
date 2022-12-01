@@ -1,0 +1,83 @@
+.analysis {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+
+  @include mq($mqMobileS) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-subtitle {
+    margin-top: -16px;
+    & span {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      color: #152124;
+      margin-right: $i16;
+    }
+  }
+
+  &-menu {
+    padding: $i24 0;
+    margin-right: $i24;
+
+    @include mq($mqMobileS) {
+      background: #FCFCFC;
+      border: 1px solid rgba(21, 33, 36, 0.1);
+      border-radius: 20px;
+      padding: $i24;
+      margin-right: 0;
+      width: 100%;
+    }
+
+    & span {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      color: #152124;
+    }
+
+    & span:first-child {
+      margin-right: $i24;
+    }
+  }
+
+  &-list {
+    flex: 1;
+
+    &__item {
+      background: #FCFCFC;
+      border: 1px solid rgba(21, 33, 36, 0.1);
+      border-radius: 20px;
+      padding: $i24;
+      margin-bottom: $i8;
+    }
+
+    &__num {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 130%;
+      color: #152124;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      color: #152124;
+      margin-bottom: $i16;
+    }
+
+    &__text {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 150%;
+      color: #152124;
+    }
+  }
+}

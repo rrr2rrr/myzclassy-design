@@ -1,0 +1,23 @@
+include ../mixins/article-item
+
+.articles-slider
+    .content-wrapper
+        +page-subtitle('Истории и статьи')
+            .articles-slider__buttons
+                a(href="#").btn.btn-reverse Развлекательные
+                a(href="#").btn Статьи производителей
+                a(href="#").btn Все статьи
+    .full-width-slider
+        +slider('js-slider-auto-width')
+            +sliderItem()
+                +articleItem('/images/article-1.jpg')
+            +sliderItem()
+                +articleItem('/images/article-2.jpg')
+            +sliderItem()
+                +articleItem('/images/article-3.jpg')
+            +sliderItem()
+                +articleItem('/images/article.jpg')
+            +sliderItem()
+                +articleItem('/images/article-2.jpg')
+            +sliderItem()
+                +articleItem('/images/article.jpg')

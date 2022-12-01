@@ -1,0 +1,6 @@
+mixin input(options)
+    .input
+        input(type='text' required=options.required ? options.required : false)
+        if block 
+            .input__placeholder
+                block

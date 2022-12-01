@@ -1,0 +1,21 @@
+mixin bread-crumbs(mod, ...items)
+    ul.bread-crumbs(class=mod)
+        each item, i in items
+            li.bread-crumbs__item
+                //- if i != 0 
+                    a(href="#")= item
+                    if i != items.length - 1
+                        span.bread-crumbs__seporate
+                            include ../svg-icons/breadcrumb_arrow
+                //- else 
+                    span= item
+                    span.bread-crumbs__seporate
+                        include ../svg-icons/breadcrumb_arrow
+                if i != items.length - 1
+                    a(href="#")= item
+                    span.bread-crumbs__seporate
+                        include ../svg-icons/breadcrumb_arrow
+                else
+                    span= item
+                    span.bread-crumbs__seporate
+        

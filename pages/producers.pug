@@ -1,0 +1,66 @@
+extend ./_layout
+block content
+    .content-wrapper
+        +bread-crumbs('', 'Главная страница', 'Российские производители')
+        +page-title('Российские производители')
+
+        .page-filter
+            .toggle-btn
+                button(type='button')
+                    include ./svg-icons/close
+                button(type='button').js-toggle-filter-library
+                    p Фильтры
+                        span (2)
+                include ./svg-icons/arrow-toggle
+            +search-input("Поиск по названию")
+
+        .page-filter-content.js-library-filter
+            .page-filter-content__title
+                |  Производители
+            .page-filter-content__form
+                .page-filter-content__column
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 1', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 2', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 3', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 4', disabled:'false'})
+                .page-filter-content__column
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 5', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 6', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 7', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 8', disabled:'false'})
+                .page-filter-content__column
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 9', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 10', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 11', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 12', disabled:'false'})
+                .page-filter-content__column
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 13', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 14', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 15', disabled:'false'})
+                    .page-filter-content__item
+                        +checkbox({step: 1, label: 'Производитель 16', disabled:'false'})
+
+        .producers-wrapper
+            include ./blocks/producer
+            include ./blocks/producer
+            include ./blocks/producer
+            include ./blocks/producer
+            include ./blocks/producer
+            include ./blocks/producer
+
+        include ./blocks/pagination

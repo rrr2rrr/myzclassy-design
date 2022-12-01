@@ -1,0 +1,128 @@
+.notes-library {
+  &-categories {
+    margin-bottom: $i40;
+  }
+
+  &-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $i40;
+    @include mq($mqMobile) {
+      margin-bottom: $i32;
+    }
+    @include mq($mqMobileS) {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    & .choices[data-type*=select-one] .choices__inner {
+      background: #FCFCFC;
+      border: 1px solid rgba(21, 33, 36, 0.1);
+      border-radius: 12px;
+      height: 50px;
+    }
+
+    & .toggle-btn {
+      background: #FCFCFC;
+      border: 1px solid rgba(21, 33, 36, 0.1);
+      border-radius: 12px;
+    }
+  }
+
+  &-list {
+    margin-bottom: $i32;
+
+    &__item {
+      display: flex;
+      padding: 24px;
+      background: #FCFCFC;
+      border: 1px solid rgba(21, 33, 36, 0.1);
+      border-radius: 20px;
+      margin-bottom: $i40;
+      @include mq($mqMobile) {
+        margin-bottom: $i32;
+      }
+      @include mq($mqMobile) {
+        flex-direction: column;
+        padding: 0px;
+      }
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+
+      &-image {
+        max-width: 330px;
+        margin-right: 24px;
+        border-radius: 8px;
+        overflow: hidden;
+        @include mq($mqMobile) {
+          max-width: 100%;
+          width: 100%;
+          margin-right: 0px;
+          padding: 16px;
+          background: rgba(196, 196, 196, 0.2);
+          border-radius: 8px 8px 0px 0px;
+          margin-bottom: $i16;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-wrapper {
+        flex-grow: 1;
+        @include mq($mqMobile) {
+          padding: 0px 16px;
+        }
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 120%;
+        font-weight: 500;
+        color: #152124;
+        margin-bottom: $i8;
+        max-width: 505px;
+        @include mq($mqMobile) {
+          margin-bottom: $i4;
+        }
+      }
+
+      &-author {
+        font-size: 14px;
+        line-height: 150%;
+        font-weight: 300;
+        color: rgba(21, 33, 36, 0.7);
+        margin-bottom: $i24;
+        @include mq($mqMobile) {
+          margin-bottom: $i16;
+        }
+      }
+
+      &-tags {
+        @include mq($mqMobile) {
+          margin-bottom: $i8;
+        }
+      }
+
+      &-btn {
+        & .btn {
+          max-width: 100px;
+          min-width: 100px;
+
+          & span {
+            min-width: 100px;
+          }
+        }
+        @include mq($mqMobile) {
+          flex-direction: column;
+          padding: 0 0 24px 24px;
+        }
+      }
+    }
+  }
+}

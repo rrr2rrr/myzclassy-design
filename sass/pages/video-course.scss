@@ -1,0 +1,259 @@
+.video-course-page {
+  color: #FFFFFF;
+  display: flex;
+  padding-bottom: $i64;
+  @include mq($mqMobile) {
+    flex-direction: column;
+  }
+
+  &-image {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-right: 32px;
+    min-width: 430px;
+    max-width: 430px;
+    max-height: 430px;
+    @include mq($mqMobile) {
+      margin-right: 0px;
+      margin-bottom: $i24;
+      text-align: center;
+    }
+
+    @include mq($mqMobileS) {
+      min-width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-description {
+    flex-grow: 1;
+    max-width: 569px;
+    @include mq($mqMobile) {
+      max-width: initial;
+    }
+
+    &__title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $i16;
+      @include mq($mqMobile) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: $i24;
+      }
+
+      h1, .h1 {
+        color: #fff;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        @include mq($mqMobile) {
+          margin-bottom: $i8;
+        }
+      }
+
+      &-like {
+        font-size: 16px;
+        line-height: 150%;
+
+        svg {
+          stroke: #fff;
+          margin-right: 4px;
+        }
+      }
+    }
+
+    &__length {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: $i32;
+      @include mq($mqMobile) {
+        margin-bottom: $i24;
+      }
+
+      & span {
+        padding: 5px 10px;
+        background: #F6F6F6;
+        border-radius: 30px;
+        font-size: 14px;
+        line-height: 1.1;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #152124;
+        display: inline-block;
+      }
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 150%;
+      font-weight: 300;
+      margin-bottom: $i32;
+      @include mq($mqMobile) {
+        margin-bottom: $i24;
+      }
+    }
+  }
+
+  &-platforms {
+    &__title {
+      font-size: 24px;
+      line-height: 120%;
+      font-weight: 500;
+      color: #FFFFFF;
+      margin-bottom: $i24;
+    }
+
+    &__buttons {
+      .btn {
+        font-size: 14px;
+        margin: 0px $i8 $i8 0px;
+
+        &:hover {
+          background-color: $yellow-accent;
+          border: 1px solid $yellow-accent;
+        }
+      }
+    }
+  }
+
+  &-author {
+    display: flex;
+    align-items: center;
+    padding: $i16 $i48 $i16 $i16;
+    background: #FCFCFC;
+    border: 1px solid rgba(21, 33, 36, 0.1);
+    border-radius: 20px;
+    margin: $i32 0px;
+    @include mq($mqMobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: $i48 0px $i24;
+      padding: 0;
+    }
+
+    &-image {
+      border-radius: 8px;
+      overflow: hidden;
+      margin-right: 24px;
+      line-height: 0;
+      flex-shrink: 0;
+      max-width: 400px;
+      max-height: 160px;
+      @include mq($mqMobile) {
+        margin-right: 0px;
+        margin-bottom: $i16;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+      }
+
+      img {
+        max-width: 100%;
+        width: 100%;
+        object-fit: cover;
+        line-height: 0;
+      }
+    }
+
+    &-description {
+      @include mq($mqMobile) {
+        padding: $i16;
+      }
+
+      &__title {
+        font-size: 24px;
+        line-height: 120%;
+        font-weight: 500;
+        color: #152124;
+        margin-bottom: $i8;
+        @include mq($mqMobile) {
+          margin-bottom: $i8;
+        }
+      }
+
+      &__subtitle {
+        font-size: 12px;
+        line-height: 130%;
+        font-weight: 500;
+        color: #152124;
+        margin-bottom: $i24;
+        @include mq($mqMobile) {
+          margin-bottom: $i16;
+        }
+      }
+
+      &__text {
+        font-size: 14px;
+        line-height: 130%;
+        font-weight: 300;
+        color: #152124;
+      }
+    }
+  }
+
+  &-video {
+    padding: $i32 0px;
+
+    &__player {
+      width: 100%;
+      max-height: 600px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: $i24;
+
+      & img, & video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+    }
+
+    &__description {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__date {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 150%;
+      color: #152124;
+      margin-bottom: $i8;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 120%;
+      color: #152124;
+      margin-bottom: $i16;
+    }
+
+    &__text {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 150%;
+      color: #2F2D3F;
+    }
+  }
+
+  &-lessons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mq($mqMobileS) {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

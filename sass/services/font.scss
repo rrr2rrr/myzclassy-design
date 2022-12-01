@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Grato Grotesk CY';
+    src: url('/fonts/GratoGroteskCY-Medium.woff2') format('woff2'),
+        url('/fonts/GratoGroteskCY-Medium.woff') format('woff'),
+        url('/fonts/GratoGroteskCY-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$Grato: 'Grato Grotesk CY';
+
+@font-face {
+    font-family: 'Kazimir Text';
+    src: url('/fonts/KazimirText-Light.woff2') format('woff2'),
+        url('/fonts/KazimirText-Light.woff') format('woff'),
+        url('/fonts/KazimirText-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$Kazimir: 'Kazimir Text';
+
+@font-face {
+    font-family: 'Muller';
+    src: url('/fonts/MullerUltraLight.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Muller';
+    src: url('/fonts/MullerLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Muller';
+    src: url('/fonts/MullerThin.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Muller';
+    src: url('/fonts/MullerRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Muller';
+    src: url('/fonts/MullerMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Muller';
+    src: url('/fonts/MullerBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Muller';
+    src: url('/fonts/MullerBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Muller';
+    src: url('/fonts/MullerExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+$Muller: 'Muller';

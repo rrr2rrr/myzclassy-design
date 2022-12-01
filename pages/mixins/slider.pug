@@ -1,0 +1,16 @@
+mixin slider(className, hideControls)
+  .slider(class=className)
+    - if(!hideControls)
+      .slider-controls
+        .slider-button.slider-button--prev.js-slider-prev
+          include ../svg-icons/svg_slider_arrow
+        .slider-button.slider-button--next.js-slider-next
+          include ../svg-icons/svg_slider_arrow
+    .swiper
+      .swiper-wrapper
+        block
+
+
+mixin sliderItem()
+  .swiper-slide
+    block

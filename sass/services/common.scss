@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    font-family: $Muller;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+}
+
+p {
+    @extend .body-text;
+}
+
+a {
+    cursor: pointer;
+}
+
+body {
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+ul {
+    padding: 0px 0px 0px 15px;
+    margin: 0px;
+    li {
+        position: relative;
+        list-style: none;
+        &::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 0.5em;
+            width: 6px;
+            height: 6px;
+            background: $yellow-accent;
+            border-radius: 50%;
+        }
+    }
+}
+
+.container {
+    padding: $i64 0;
+    &--white {
+        background: #FFF;
+        color: #000;
+    }
+    &--dark {
+        background: #F9F8F6;
+    }
+    &--light-blue {
+        background: $blue-accent;
+        color: #FFF;
+    }
+    &--blue {
+        background: #152124;
+        color: #fff;
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h5 {
+            color: #fff;
+        }
+        p {
+            color: #fff;
+        }
+    }
+    @include mq($mqMobile) {
+        padding: $i48 0;
+    }
+    &.p0 {
+        padding: 0;
+    }
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    // background: #F9F8F6;
+    color: #152124;
+    overflow-x: hidden;
+    &--white {
+        background: #FFF;
+    }
+    header {
+        flex-shrink: 0;
+    }
+    main {
+        flex-grow: 1;
+        padding-top: $headerHeight;
+        @include mq($mqMobile) {
+            padding-top: $headerMobileHeight;
+        }
+    }
+    footer {
+        flex-shrink: 0;
+    }
+}
+
+.content-wrapper {
+    max-width: calc(1180px + $contentindent * 2);
+    width: calc(100% - $pageindent * 2);
+    padding: 0px $contentindent;
+    margin: 0px auto;
+    position: relative;
+    @include mq($mqMobile) {
+        width: 100%;
+        max-width: 100%;
+        padding: 0px $contentIndentMobile;
+    }
+
+    &.map {
+        position: initial;
+    }
+}
+
+.content-dark {
+    background-color: #152124;
+    margin-top: $headerHeight * -1;
+    padding-top: $headerHeight;
+    @include mq($mqMobile) {
+        margin-top: $headerMobileHeight * -1;
+        padding-top: $headerMobileHeight;
+    }
+}
+
+.content-overflow {
+    overflow: hidden;
+}
+
+.background-default-color {
+    background: #F9F8F6;
+}

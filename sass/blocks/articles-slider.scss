@@ -1,0 +1,47 @@
+.articles-slider {
+    &__buttons {
+        margin-top: -$i16;
+        @include mq($mqMobile) {
+            margin-top: -$i24;
+        }
+        .btn {
+            margin-right: $i8;
+            margin-bottom: $i8;
+        }
+    }
+    .slider {
+        .swiper {
+            &-slide {
+                max-width: 376px;
+                width: 100%;
+                min-height: 380px;
+                @include mq($mqMobile) {
+                    min-height: 400px;
+                    max-width: 282px;
+                }
+                .article-item {
+                    min-height: 380px;
+                    picture {
+                        display: block;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    @include mq($mqMobile) {
+                        min-height: 400px;
+                    }
+                }
+            }
+        }
+        .slider-controls {
+            @include mq($mqMobile) {
+                display: none;
+            }
+        }
+    }
+}
